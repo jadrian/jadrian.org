@@ -1,0 +1,367 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <title>Resumé — Jadrian Miles</title>
+  <script type="text/javascript" src="resume-resources/jquery.js"  charset="utf-8"></script>
+  <script type="text/javascript" src="resume-resources/resume.js"  charset="utf-8"></script>
+  <link rel="stylesheet" type="text/css" href="resume-resources/resume.css" />
+</head>
+<!--                             PRINTING
+
+Desired result: 0.75" margins all around, with 0.4" above the 2nd-page header.
+
+Software discrepancies: In the past, Chrome's font rendering made the bold text
+look crappy (muddy and bloated), while Safari's looked great.  As of 2016,
+they're much more similar, though Chrome's is now a slightly *lighter* weight
+than Safari's!
+  Chrome has fine control over margins, while Safari sets them to 0.25" top,
+left, and right, and 0.5" bottom, regardless of what you tell it to do.
+  Safari also renders the text slightly larger than Chrome does.
+
+So, as of 2016, the recommendation is to print from CHROME.
+
+Instructions:
+- Open this page in Chrome.
+- Add "print" to the address hash: #cv&print or #resume&print or #print.
+- Print to PDF, with 0.75" left, right, and bottom, and 0.4" top.
+  (See resume.css for more, plus historical notes.)
+
+-->
+<body onload="body_load_actions()">
+  <div id="contents">
+    <div id="modeswitcher"></div>
+    <div id="header">
+      <div id="contact_left">
+        <p>Department of Mathematics</p>
+        <p>Phillips Academy</p>
+        <p>Andover, MA 01810<span class="print_only">, USA</span></p>
+      </div>
+      <h1>Jadrian Miles, PhD</h1>
+      <div id="contact_right">
+        <p><a href="http://jadrian.org">http://jadrian.org</a></p>
+        <p><a href="mailto:jmiles@andover.edu" class="cv_only">jmiles@andover.edu</a><span class="txt_only"><br/></span><a href="mailto:jadrian.miles@gmail.com" class="res_only">jadrian.miles@gmail.com</a></p>
+        <p>(919) 593-8094</p>
+      </div>
+    </div>
+    <div id="blocker"> </div>
+    
+    <div id="education">
+      <hr class="txt_only" />
+      <h2>Education</h2>
+      <dl><dd>
+      <dl>
+        <dt><span class="date">2015</span><span class="txt_only"> </span><strong>Ph.D.</strong> in <a href="http://www.cs.brown.edu">Computer Science</a>, <a href="http://www.brown.edu">Brown University</a>.</dt>
+          <dd class="cv_only">
+            <dl id="diss_line"><dt><strong>Dissertation:</strong> &ldquo;<a href="http://cs.brown.edu/~jadrian/docs/papers/Jadrian%20Miles%20-%20Dissertation.pdf">A Multi-Scale Model of Brain White-Matter Structure and Its Fitting Method for Diffusion MRI</a>&rdquo;. Committee: <a href="http://cs.brown.edu/~dhl">David H. Laidlaw</a> (advisor), <a href="http://irp.nih.gov/pi/peter-basser">Peter J. Basser</a> (NIH), <a href="http://cs.brown.edu/~jfh">John F. Hughes</a>, and <a href="http://cs.brown.edu/people/braphael">Benjamin J. Raphael</a>.</dt></dl>
+          </dd>
+        <dt><span class="date">2008</span><span class="txt_only"> </span><strong>Sc.M.</strong> in <a href="http://www.cs.brown.edu">Computer Science</a>, <a href="http://www.brown.edu">Brown University</a>.</dt>
+        <dt><span class="date">2006</span><span class="txt_only"> </span><strong>B.S.</strong> with Distinction in <a href="http://www.cs.duke.edu">Computer Science</a>, <strong>B.S.</strong> in <a href="http://www.math.duke.edu">Mathematics</a>, <a href="http://www.duke.edu">Duke University</a>.</dt>
+      </dl>
+      </dd></dl>
+    </div>
+    
+    <div id="work">
+      <hr class="txt_only" />
+      <h2>Professional Experience</h2>
+      <dl id="sw-eng">
+        <dt class="h3">Software Engineering &amp; Research</dt><dd><dl>
+          <dt><span class="date">2006&ndash;2015</span><span class="txt_only"> </span><strong><a href="http://www.brown.edu">Brown University</a></strong>, Providence, RI</dt>
+            <dd>
+              <strong>Graduate Researcher</strong> in <a href="http://www.cs.brown.edu">Computer Science Department</a>
+              <ul>
+                <li>Developed a mixed discrete/continuous model of brain-tissue structure, and algorithms to fit it to MRI data.</li>
+                <li>Collaborated across disciplines with scientists <!--medical physicists, psychiatrists, neuroscientists, and statisticians--> in Providence, RI; St. Louis, MO; Edinburgh; and Cape Town.</li>
+                <li>Made frequent presentations, including over 25 one-hour talks given to my research group and others.</li>
+                <li class="res_only">Developed and ran my research software on Linux and Mac OS X in C/C++, GLSL, Python/Numpy, Matlab, and bash.</li>
+              </ul>
+            </dd>
+          <dt><span class="date">2011</span><span class="txt_only"> </span> <strong><a href="http://www.google.com/intl/en/about/corporate/index.html">Google, Inc.</a></strong>, Cambridge, MA</dt>
+            <dd>
+              <strong>Intern</strong> in Software Engineering
+              <ul>
+                <li>Back-end design, development<span class="res_only"> (with MapReduce in C++)</span>, and deployment of a customer-facing user interface for latency analytics<span class="res_only">, which shipped on my final day</span>.</li>
+              </ul>
+            </dd>
+          <dt><span class="date">2000&ndash;2008</span><span class="txt_only"> </span><strong><a href="http://www.avid.com">Avid Technology, Inc.</a></strong>, Tewksbury, MA</dt>
+            <dd>
+              <strong>Intern</strong> in Software Engineering, Software Quality Assurance, and Training Departments
+              <ul>
+                <li><span class="date">2008, 2006, 2003</span><span class="txt_only"> </span>Research and development of algorithms for
+                  video deinterlacing (machine learning),
+                  scene reconstruction (computer vision), and
+                  cryptographic steganography.</li>
+                <li><span class="date">2004</span><span class="txt_only"> </span>Video codec evaluation; development of in-house codec testing workflow software.</li>
+                <li><span class="date">2003</span><span class="txt_only"> </span>Migration of full corporate code base to Visual Studio .net compiler; software refactoring &amp; optimization.</li>
+                <li><span class="date">2002</span><span class="txt_only"> </span>Software quality assurance; network and hardware construction and maintenance.</li>
+                <li class="res_only">Worked with Matlab, C/C++, Intel numerical libraries, Javascript, etc. on Windows.<!--PHP, Javascript, Visual Studio 6 and .net, Eclipse IDE, KSH, Windows workstations and servers, and video editing hardware.--></li>
+                <!--
+                <li><span class="date">2008</span><span class="txt_only"> </span>Research and development of machine learning algorithms for video deinterlacing.</li>
+                <li><span class="date">2006</span><span class="txt_only"> </span>R&amp;D of computer vision algorithms for scene reconstruction.</li>
+                <li><span class="date">2003</span><span class="txt_only"> </span>R&amp;D of cryptographic steganography algorithms.</li>
+                <li><span class="date">2000</span><span class="txt_only"> </span>Office assistant.</li>
+                -->
+              </ul>
+            </dd>
+        </dl></dd>
+      </dl>
+      <!--<dl id="research">
+        <dt class="h3">Research</dt><dd><dl>
+        </dl></dd>
+      </dl>-->
+      <div id="teach">
+        <dl>
+          <dt class="h3">Teaching</dt><dd><dl>
+            <dt><span class="date">2015&ndash;2016</span><span class="txt_only"> </span><strong><a href="http://www.andover.edu">Phillips Academy</a></strong>, Andover, MA</dt>
+              <dd>
+                <strong>Instructor</strong> in Department of Mathematics, Statistics, and Computer Science
+                <ul>
+                  <li>Taught
+                    AP CS (3 sections),
+                    Software Design,
+                    <a href="/courses/pa/comp_gfx/2016.0/index.html">Computer Graphics</a>, and
+                    <a href="/courses/pa/dstructs/2016.1/index.html">Data Structures</a> (2 sections).
+                  </li>
+                  <li>Designed the Graphics course from scratch: a bottom-up approach in Python/Numpy and WebGL.</li>
+                  <li>Advised two teams, of three students each, on independent projects: &ldquo;<a href="https://github.com/PACTF/pactf">PACTF</a>&rdquo; and Combinatorial Optimization.</li>
+                  <li>Co-instructed the outdoor learning program, Outdoor Pursuits, for two trimesters.</li>
+                </ul>
+              </dd>
+            <dt><span class="date">2013&ndash;2015</span><span class="txt_only"> </span><strong><a href="http://www.carleton.edu">Carleton College</a></strong>, Northfield, MN</dt>
+              <dd>
+                <strong>Visiting Instructor</strong> in <a href="http://www.cs.carleton.edu">Computer Science Department</a>
+                <ul>
+                  <li>Taught
+                    <a href="http://cs.carleton.edu/faculty/jadrian/cs111/2014.1/index.html">Intro</a> (2x),
+                    <a href="http://cs.carleton.edu/faculty/jadrian/cs201/2014.1/index.html">Data Structures</a> (2x),
+                    <a href="http://cs.carleton.edu/faculty/jadrian/cs202/2014.3/index.html">Math of CS</a> (2x),
+                    <a href="http://cs.carleton.edu/faculty/jadrian/cs252/2014.3/index.html">Algorithms</a> (3x), and
+                    Software Design (1x).</li>
+                  <li>Designed and taught an <a href="http://cs.carleton.edu/faculty/jadrian/cs318/2014.0/index.html">elective on medical image analysis</a>. Significantly redesigned Data Structures.</li>
+                  <li>Managed undergraduate graders for most courses.</li>
+                  <li>Advised five students as research assistants for two trimesters.</li>
+                  <li>Advised three teams, of six students each, on two-trimester senior capstone projects.</li>
+                  <li>Academic advisor for fourteen majors.</li>
+                </ul>
+              </dd>
+            <dt><span class="date">2008, 2013</span><span class="txt_only"> </span><strong><a href="http://www.brown.edu">Brown University</a></strong>, Providence, RI</dt>
+              <dd>
+                <strong>Instructor</strong> in <a href="http://www.cs.brown.edu">Computer Science Department</a>
+                <ul>
+                  <li><span class="date">2013</span><span class="txt_only"> </span>Taught <a href="http://cs.brown.edu/courses/csci0931/2013/"><!--CS0931 -->Intro to Computation for the Humanities and Social Sciences</a> and managed a staff of undergraduate TAs<!--: twice-weekly lectures, lesson planning, office hours, and management of a staff of undergraduate TAs-->.</li>
+                </ul>
+              </dd>
+              <dd>
+                <strong>Teaching Assistant</strong> in <a href="http://www.cs.brown.edu">Computer Science Department</a>
+                <ul>
+                  <li><span class="date">2008</span><span class="txt_only"> </span>TA'd <a href="http://www.cs.brown.edu/courses/cs137/2008"><!--CS137, -->Virtual Reality Design for Scientific Visualization</a>, including extensive virtual reality software support.<!--: lesson planning, grading, in-class critiques, software <span class="res_only">(in-house shell and web scripts on Red Hat and CentOS Linux) </span>and hardware support<span class="res_only"> (<a href="http://en.wikipedia.org/wiki/Cave_Automatic_Virtual_Environment">CAVE Automatic Virtual Environment</a>)</span>.--></li>
+                </ul>
+              </dd>
+
+<!-- Begin page 2 header for CV -->
+            <div class="print_only cv_only" style="margin-left: -1.5em; /* Undo Teaching dd indent */">
+              <!--<div style="height: 0in; /* Page 1 bottom padding */"> </div>-->
+              <div class="pghead" style="width: 100%; margin-top: 0in; padding-top: -0.02in; padding-bottom: 0.31in;">
+                <div id="cv_pg2left" style="width: 25%; float: left;">&nbsp;</div>
+                <div id="cv_pg2title" style="width: 50%; float: left; text-align: center;">Curriculum Vitae &mdash; Jadrian Miles</div>
+                <div id="cv_pg2number" style="width: 25%; float: right; text-align: right;">Page 2 of 2</div>
+              </div>
+              <h2 style="border: none; background-image: none; margin-top: 0in; padding-top: 0in;">Professional Experience, continued</h2>
+              <p class="h3">Teaching, continued</p>
+            </div>
+<!-- End page 2 header for CV -->
+
+            <dt><span class="date">2009&ndash;2011</span><span class="txt_only"> </span><strong><a href="http://newurbanarts.org/">New Urban Arts</a></strong>, Providence, RI</dt>
+              <dd><strong>Academic mentor</strong> in math and science to high-school art students.</dd>
+            <dt><span class="date">2004&ndash;2006</span><span class="txt_only"> </span><strong><a href="http://www.duke.edu">Duke University</a></strong>, Durham, NC</dt>
+              <dd>
+                <strong>Undergraduate Teaching Assistant</strong> in <a href="http://www.cs.duke.edu">Computer Science Department</a>
+                <ul>
+                  <li>TA'd
+                    <a href="http://www.cs.duke.edu/courses/fall04/cps108/">Software Design<!-- (CS108)--></a>,
+                    <a href="http://www.cs.duke.edu/courses/fall05/cps124/">Graphics<!-- (CS124)--></a>,
+                    Numerical Analysis (grad-level)<!-- (CS250)-->, and
+                    <a href="http://www.cs.duke.edu/courses/spring06/cps102/">Discrete Math<!-- (CS102)--></a>. Taught one lecture for Graphics.</li>
+                  <!--
+                  <li><span class="date">2006</span><span class="txt_only"> </span><a href="http://www.cs.duke.edu/courses/spring06/cps102/">CS102, Discrete Mathematics</a>: grading, office hours.</li>
+                  <li><span class="date">2005</span><span class="txt_only"> </span>CS250, Graduate Numerical Analysis: grading, office hours.</li>
+                  <li><span class="date">2005</span><span class="txt_only"> </span><a href="http://www.cs.duke.edu/courses/fall05/cps124/">CS124, Computer Graphics</a>: grading, office hours, lectures.</li>
+                  <li><span class="date">2004</span><span class="txt_only"> </span><a href="http://www.cs.duke.edu/courses/fall04/cps108/">CS108, Software Design</a>: grading, office hours.</li>
+                  -->
+                </ul>
+              </dd>
+          </dl></dd>
+        </dl>
+      </div>
+    </div>
+    
+<!-- Begin page 2 header for resume -->
+      <div class="print_only res_only">
+        <!-- All these values are hand-tuned, to give a 0.4" top margin
+             above the page-2 header and 0.75" to the content.             -->
+        <!--<div style="height: 0.5in; /* Page 1 bottom padding */"> </div>-->
+        <div class="pghead" style="width: 100%; margin-top: 0in; padding-top: 0in; padding-bottom: 0.28in;">
+          <div id="res_pg2left" style="width: 25%; float: left;">&nbsp;</div>
+          <div id="res_pg2title" style="width: 50%; float: left; text-align: center;">Resum&eacute; &mdash; Jadrian Miles</div>
+          <div id="res_pg2number" style="width: 25%; float: right; text-align: right;">Page 2 of 2</div>
+        </div>
+      </div>
+<!-- End page 2 header for CV -->
+    <div id="skills" class="res_only">
+      <hr class="txt_only" />
+      <h2>Skills</h2>
+      <dl>
+        <dt class="h3">Programming and markup languages</dt>
+          <dd>
+            <ul>
+              <li><strong>Proficiency:</strong> C/C++, Matlab, Python/Numpy, Java, compliant HTML, CSS, LaTeX.</li>
+              <li><strong>Familiarity:</strong> Make, Javascript, PHP, SVG, bash, csh, <a href="http://supercollider.sourceforge.net/">SuperCollider</a>, Processing.</li>
+            </ul>
+          </dd>
+        <dt class="h3">Software / Libraries</dt>
+          <dd>
+            <ul>
+              <li><strong>Proficiency:</strong> Debian/Ubuntu Linux, Mac OS X, Windows XP, Eclipse, Photoshop, <a href="http://inkscape.org/">Inkscape</a>.</li>
+              <!-- Linux since '03, OS X since '07, Windows XP prior to '06, Matlab since '04, Eclipse '03–'09, Photoshop since 2000, Inkscape since '06. -->
+              <li><strong>Familiarity:</strong> JUnit, Git, Subversion, CVS, ClearCase.</li>
+            </ul>
+          </dd>
+      </dl>
+    </div>
+    
+    <!--
+    <div id="activities" class="res_only">
+      <hr class="txt_only" />
+      <h2>Activities</h2>
+      <p>In my dissertation, &ldquo;<a href="http://cs.brown.edu/~jadrian/docs/papers/Jadrian%20Miles%20-%20Dissertation.pdf">A Multi-Scale Model of Brain White-Matter Structure and Its Fitting Method for Diffusion MRI</a>&rdquo;, I developed a mathematical model for the millimeter-scale structure of the human brain and a set of algorithms for fitting this model to MRI brain-scan data. I write and run my research software on Linux and Mac OS X in C/C++, GLSL, Python/numpy, Matlab, and bash.  I have collaborated with medical physicists, psychiatrists, neuroscientists, and statisticians in Providence, RI; St. Louis, MO; Edinburgh; and Cape Town. My work involves frequent presentations, including over 25 one-hour talks given to my research group and others since 2007.</p>
+      <p>My personal activities include volunteer service in academic and community organizations, cooking and entertaining, mountain biking and bike commuting, dancing, creating computer- and mathematics-based visual art and music, collecting and listening to music, attending local music shows, skiing, storytelling, backpacking, travel, and karaoke. I used Ubuntu Linux exclusively for personal computing from 2005 until supplementing it with Mac OS X in 2007.</p>
+    </div>
+    -->
+    
+    <!--
+    <div id="teach-interests" class="cv_only">
+      <hr class="txt_only" />
+      <h2>Teaching Interests</h2>
+      <dl>
+          <dd>
+            <ul>
+              <li><strong>Seminar</strong> on diffusion MRI physics, modeling, and analysis for brain science.</li>
+              <li><strong>Undergraduate courses</strong>: Algorithms, Software Design, Computer Graphics, Numerical Analysis, Mathematical Modeling, Scientific Computing, Scientific Communication.</li>
+              <li><strong>Introductory courses</strong>: Computer Science for Non-CS Students, Intro CS (in C++, Java, Python, etc.), Web Development, Data Structures, Discrete Mathematics, Linear Algebra, Calculus.</li>
+            </ul>
+          </dd>
+      </dl>
+    </div>
+    -->
+    
+    <div id="service">
+      <hr class="txt_only" />
+      <h2>Service</h2>
+      <dl><dd>
+      <dl>
+        <dt><strong>Reviewer</strong> for <cite><a href="http://visweek.org/">IEEE Visualization</a></cite> and <cite><a href="http://www.computer.org/tvcg">IEEE Transactions on Visualization and Computer Graphics</a></cite>.</dt>
+        <dt><span class="date">2013&ndash;2015</span><span class="txt_only"> </span><strong><a href="http://www.carleton.edu">Carleton College</a></strong>, Northfield, MN</dt>
+          <dd>
+            <ul>
+              <li><span class="date">2014</span><span class="txt_only"> </span>Faculty reviewer of sophomore writing portfolios.</li>
+              <li><span class="date">2014</span><span class="txt_only"> </span>Interviewer for Digital Humanities postdoctoral candidates.</li>
+              <li><span class="date">2014</span><span class="txt_only"> </span>Interviewer for Goldwater Scholarship candidates.</li>
+            </ul>
+          </dd>
+        <dt><span class="date">2012</span><span class="txt_only"> </span><strong><a href="http://www.providenceschools.org">Providence Public School Department</a></strong>, Providence, RI</dt>
+          <dd>
+            <ul>
+              <li>Invited Evaluator of student demonstrations for <a href="http://elo.hubprov.com">Expanded Learning Opportunities</a>.</li>
+            </ul>
+          </dd>
+        <dt><span class="date">2006&ndash;2010</span><span class="txt_only"> </span><strong><a href="http://www.brown.edu">Brown University</a></strong>, Providence, RI</dt>
+          <dd>
+            <ul>
+              <li><span class="date">2011</span><span class="txt_only"> </span>Member, CS Graduate Student Committee for PhD Admissions.</li>
+              <li><span class="date">2008, 2010</span><span class="txt_only"> </span>Technical Officer, <a href="http://students.brown.edu/gsc/">Brown Graduate Student Council</a>.</li>
+              <li><span class="date">2006&ndash;2009</span><span class="txt_only"> </span>CS Department Representative, <a href="http://students.brown.edu/gsc/">Brown Graduate Student Council</a>.</li>
+              <li><span class="date">2008</span><span class="txt_only"> </span>Organizer, CS Graduate Student Committee for Faculty Search.</li>
+              <li><span class="date">2007, 2008</span><span class="txt_only"> </span>Organizer, CS Graduate Student Recruitment.</li>
+            </ul>
+          </dd>
+        <dt><span class="date">2005&ndash;2006</span><span class="txt_only"> </span><strong><a href="http://www.duke.edu">Duke University</a></strong>, Durham, NC</dt>
+          <dd>
+            <ul>
+              <li><span class="date">2006</span><span class="txt_only"> </span>President, <a href="http://www.cs.duke.edu/acm/">Duke University Chapter</a> of <a href="http://www.acm.org">the Association for Computing Machinery</a>.</li>
+              <li><span class="date">2006</span><span class="txt_only"> </span>Member, Student Advisory Committee to the Office of the Dean of Students.</li>
+              <li><span class="date">2005&ndash;2006</span><span class="txt_only"> </span>DJ, <a href="http://www.wxdu.org">WXDU</a>.</li>
+            </ul>
+          </dd>
+      </dl>
+      </dd></dl>
+    </div>
+
+    <!--<div id="honors">
+      <hr class="txt_only" />
+      <h2>Honors</h2>
+      <dl>
+          <dd>
+            <ul>
+              <li><strong>2002&ndash;2006:</strong> Duke University: William D. Jones Memorial Alumni Scholarship (merit-based, partial tuition).</li>
+              <li><strong>2002:</strong> Microsoft: National High School Computer Science Scholarship.</li>
+              <li><strong>2002:</strong> <a href="http://www.comap.com">COMAP</a>: Outstanding Solution in <a href="http://en.wikipedia.org/wiki/Mathematical_Contest_in_Modeling">Mathematical Contest in Modeling</a>.</li>
+              <li><strong>2002:</strong> <a href="http://www.informs.org/">INFORMS</a>: INFORMS Prize in <a href="http://en.wikipedia.org/wiki/Mathematical_Contest_in_Modeling">COMAP Mathematical Contest in Modeling</a>.</li>
+            </ul>
+          </dd>
+      </dl>
+    </div>-->
+
+    <div id="pubs">
+      <hr class="txt_only" />
+      <h2>Publications and Presentations</h2>
+      <dl>
+        <dt class="h3">Journal Papers</dt>
+          <dd>
+            <ul>
+              <li>A. Gongvatana, R. Cohen, S. Correia, K.N. Devlin, J. Miles, H. Kang, H. Ombao, B. Navia, D.H. Laidlaw, and K.T. Tashima. &ldquo;<a href="http://cs.brown.edu/~jadrian/docs/papers/2011%20-%20Gongvatana%20-%20J.%20Neurovirology%20-%20HIV%20and%20White%20Matter.pdf">Clinical Contributors to Cerebral White Matter Integrity in HIV-Infected Individuals</a>&rdquo;. <a href="http://dx.doi.org/10.1007/s13365-011-0055-0"><cite>Journal of Neurovirology</cite>, 17(5):477&ndash;486, 2011</a>.</li>
+              <li>R. Boller, S.A. Braun, J. Miles, and D.H. Laidlaw. &ldquo;<a href="http://cs.brown.edu/~jadrian/docs/papers/2010%20-%20Boller%20-%20ESI%20-%20Uncertainty%20Viz%20in%20Meteorology.pdf">Application of Uncertainty Visualization Methods to Meteorological Trajectories</a>&rdquo;. <a href="http://dx.doi.org/10.1007/s12145-010-0052-5"><cite>Earth Science Informatics</cite>, 3(1&ndash;2):119&ndash;126, June 2010</a>.</li>
+              <li>D.F. Keefe, D. Acevedo, J. Miles, F. Drury, S.M. Swartz, and D.H. Laidlaw. &ldquo;<a href="http://cs.brown.edu/~jadrian/docs/papers/2008%20-%20Keefe%20-%20TVCG%20-%20Scientific%20Sketching.pdf">Scientific Sketching for Collaborative VR Visualization Design</a>&rdquo;. <a href="http://dx.doi.org/10.1109/TVCG.2008.31"><cite>IEEE Transactions on Visualization and Computer Graphics</cite>, 14(4):835&ndash;847, Jul&ndash;Aug 2008</a>.</li>
+              <!--<li>A. McCauley, J. Michener, and J. Miles. &ldquo;<a href="http://cs.brown.edu/~jadrian/docs/papers/old/20020211%20McCauley,%20Michener,%20and%20Miles%20-%20MCM%20Fountain%20Submission.pdf">The Fountain That Math Built</a>&rdquo;. <cite>UMAP Journal</cite>, 23(3):221&ndash;234, Fall 2002.</li>-->
+            </ul>
+          </dd>
+        <div class="res_only">
+        <dt class="h3">PhD Dissertation</dt>
+          <dd>
+            <ul>
+              <li>J. Miles. &ldquo;<a href="http://cs.brown.edu/~jadrian/docs/papers/Jadrian%20Miles%20-%20Dissertation.pdf">A Multi-Scale Model of Brain White-Matter Structure and Its Fitting Method for Diffusion MRI</a>&rdquo;. Brown University Department of Computer Science, May 2015.</li>
+            </ul>
+          </dd>
+        </div>
+        <dt class="h3">Refereed Posters, Workshops, and Invited Talks</dt>
+          <dd>
+            <ul>
+              <li>J. Miles and D.H. Laidlaw. &ldquo;<a href="http://cs.brown.edu/~jadrian/docs/papers/2012%20-%20Miles%20-%20ISMRM%20-%20Streamline%20Uncertainty%20%28abstract%29.pdf">Predicting DTI Tractography Uncertainty from Diffusion-Weighted-Image Noise</a>&rdquo;. Poster at <a href="http://www.ismrm.org/12">ISMRM 2012</a>.</li>
+              <li>R. Boller, S. Braun, J. Miles, and D. Laidlaw. &ldquo;<a href="http://cs.brown.edu/~jadrian/docs/papers/talks/20090805%20Boller%20-%20Uncertainty%20Viz%20in%20Meteorology%20(ESSI).pdf">Application of Uncertainty Visualization Methods to Meteorological Trajectories</a>&rdquo;. <a href="http://nasa.gov">NASA</a> <a href="http://essi.gsfc.nasa.gov/">Earth and Space Science Informatics Workshop</a>, University of Maryland, Baltimore County. August 2009.</li><!-- Begin page 3 header for res --><!--
+            </ul>
+          </dd>
+      </dl>
+      <div class="pghead" style="width: 100%; margin: -1em 0em 3em 0em;">
+        <div id="res_pg3left" style="width: 25%; float: left;">&nbsp;</div>
+        <div id="res_pg3title" style="width: 50%; float: left; text-align: center;">Resum&eacute; &mdash; Jadrian Miles</div>
+        <div id="res_pg3number" style="width: 25%; float: right; text-align: right;">Page 3 of 3</div>
+      </div>
+      <dl style="padding-top: 3em;"><dd><ul>--><!-- End page 3 header for res -->
+              <li>J. Miles. &ldquo;<a href="http://cs.brown.edu/~jadrian/docs/papers/talks/20090519%20Miles%20-%20Curve%20Clustering%20(NIH).pdf">A Specialized Inter-Curve Similarity Measure for Agglomerative Diffusion MRI Streamline Clustering</a>&rdquo;. Invited talk at the <a href="http://stbb.nichd.nih.gov/">Section on Tissue Biophysics and Biomimetics</a>, <a href="http://www.nih.gov">National Institutes of Health</a>. May 2009.</li>
+              <li>J. Miles, R.A. Cohen, and D.H. Laidlaw. &ldquo;<a href="http://cs.brown.edu/~jadrian/docs/papers/2009%20-%20Miles%20-%20ISMRM%20-%20Tradeoffs%20in%20DTI%20Supersampling%20%28abstract%29.pdf">Tradeoffs in Supersampling of DTI Metrics</a>&rdquo;. Poster at <a href="http://www.ismrm.org/09">ISMRM 2009</a>.</li>
+              <li>J. Miles, D.F. Keefe, D. Acevedo, F. Drury, S.M. Swartz, and D.H. Laidlaw. &ldquo;<a href="http://cs.brown.edu/~jadrian/docs/papers/2007%20-%20Miles%20-%20InfoVis%20-%20Teaching%20Science%20in%20VR%20%28abstract%29.pdf">Teaching Science in Virtual Reality with a Freehand 3D Illustration</a>&rdquo;. Poster at <a href="http://conferences.computer.org/infovis/infovis2007">IEEE InfoVis 2007</a>.</li>
+            </ul>
+          </dd>
+        <dt class="h3">Instructional Workshops</dt>
+          <dd>
+            <ul>
+              <li>J. Miles. &ldquo;<a href="http://cs.brown.edu/~jadrian/docs/workshops/thatcamp_ne_2012/index.html">Regular Expressions, Text Processing, and Web Scraping</a>&rdquo;, a two-hour <span class="res_only">Python</span> tutorial at <a href="http://newengland2012.thatcamp.org/sample-page/">The Humanities and Technology Camp (New England)</a> at Brown University.  October 2012.</li>
+              <li>J. Miles. &ldquo;<a href="http://jadrian.org/art/fibbly/index.html">Fibbly Math Patterns</a>&rdquo;, a one-hour classroom workshop for elementary- and middle-school&ndash;age students.  Facilitated ten sessions total in Damariscotta, ME and Philadelphia, PA. November 2011 &ndash; January 2013.</li>
+              <li>A. Gongvatana, J. Miles. &ldquo;<a href="http://cs.brown.edu/~jadrian/docs/papers/talks/20101030%20Gongvatana%20-%20Diffusion%20MRI%20Theory%20and%20Practice%20(Brown%20Biostats%20Workshop).pdf">Diffusion MRI: Theory and Practice</a>&rdquo;, a three-hour workshop in <a href="http://publichealth.brown.edu/departments/?id=22">the Biostatistics Program, Department of Public Health, Brown University</a>. October 2010.</li>
+            </ul>
+          </dd>
+      </dl>
+    </div>
+  </div>
+</body>
+</html>
