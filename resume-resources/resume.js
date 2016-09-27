@@ -16,6 +16,7 @@ function SetModeResume() {
   }
   $('#sw-eng').insertBefore('#teach');
   $('#pubs').insertAfter('#service');
+  $('#education').insertAfter('#work');
   document.location.hash = hash;
   document.title = 'Resumé — Jadrian Miles';
 }
@@ -31,6 +32,7 @@ function SetModeCV() {
   }
   $('#teach').insertBefore('#sw-eng');
   $('#pubs').insertBefore('#work');
+  $('#education').insertBefore('#pubs');
   document.location.hash = hash;
   document.title = 'Curriculum Vitae — Jadrian Miles';
 }
