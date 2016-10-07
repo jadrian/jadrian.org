@@ -112,7 +112,7 @@ a#photo-link, a#photo-link:visited, a#photo-link:hover {
 }
 @media screen and (max-width: 650px) {
   body {
-    margin: 2% 2% 3em 2%;
+    margin: 2%;
   }
   #photo-wrapper {
     width: 100%;
