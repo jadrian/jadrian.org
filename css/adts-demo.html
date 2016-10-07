@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <title>CSS ADT demo</title>
+  <link rel="stylesheet" type="text/css" href="adts.css" />
+</head>
+<body>
+  <h1>Demo of CSS-Based ADT Rendering</h1>
+  
+  <h2>Lists</h2>
+  <div class="adt-container">
+    <span class="name">L1</span>
+    <ul class="list">
+      <div class="empty">&nbsp;</div>
+    </ul>
+  </div>
+  <div class="adt-container">
+    <span class="name">L2</span>
+    <ul class="list">
+      <li><div>"foo"</div></li>
+    </ul>
+  </div>
+  <div class="adt-container">
+    <span class="name">L3</span>
+    <ul class="list">
+      <li><div>"foo"</div></li>
+      <li><div>"bar"</div></li>
+      <li><div>"waj"</div></li>
+    </ul>
+  </div>
+  
+  <h2>Lists with no indices</h2>
+  <div class="adt-container">
+    <span class="name">L4</span>
+    <ul class="list no-indices">
+      <li><div>F</div></li>
+      <li><div>H</div></li>
+      <li><div>J</div></li>
+      <li><div>X</div></li>
+      <li><div>U</div></li>
+    </ul>
+  </div>
+  
+  <h2>Stacks</h2>
+  <div class="adt-container">
+    <span class="name">S1</span>
+    <ul class="stack">
+      <div class="empty">&nbsp;</div>
+    </ul>
+  </div>
+  <div class="adt-container">
+    <span class="name">S2</span>
+    <ul class="stack">
+      <div class="empty">
+        <li><div>"gut"</div></li>
+      </div>
+    </ul>
+  </div>
+  <div class="adt-container">
+    <span class="name">S3</span>
+    <ul class="stack">
+      <li><div>"lit"</div></li>
+      <li><div>"rap"</div></li>
+      <li><div>"sod"</div></li>
+      <li><div>"gut"</div></li>
+    </ul>
+  </div>
+  
+  <h2>Queues</h2>
+  <div class="adt-container">
+    <span class="name">Q1</span>
+    <ul class="queue">
+      <div class="empty">&nbsp;</div>
+    </ul>
+  </div>
+  <div class="adt-container">
+    <span class="name">Q2</span>
+    <ul class="queue">
+      <div class="empty">
+        <li><div>"meow"</div></li>
+      </div>
+    </ul>
+  </div>
+  <div class="adt-container">
+    <span class="name">Q3</span>
+    <ul class="queue">
+      <li><div>"loud"</div></li>
+      <li><div>"down"</div></li>
+      <li><div>"baum"</div></li>
+      <li><div>"meow"</div></li>
+    </ul>
+  </div>
+  
+  <h2>Dictionaries</h2>
+  <p>These are kinda ugly and non-representative; they're also laid out in a way that implies the key/value pairs have an order to them, which is not true.</p>
+  <div class="adt-container">
+    <span class="name">D1</span>
+    <dl class="dict">
+      <div class="empty">&nbsp;</div>
+    </dl>
+  </div>
+  <div class="adt-container">
+    <span class="name">D2</span>
+    <dl class="dict">
+      <dt>"wham"</dt><dd>0</dd>
+    </dl>
+  </div>
+  <div class="adt-container">
+    <span class="name">D2</span>
+    <dl class="dict">
+      <dt>"wham"</dt><dd>0</dd>
+      <dt>"biff"</dt><dd>5</dd>
+      <dt>"sokk"</dt><dd>-3</dd>
+    </dl>
+  </div>
+  
+  <h2>Sets</h2>
+  <p>These look like the mathematical notation for sets, but for a pictorial representation of an ADT, a Set is more appropriately shown as a jumbled, order-free cloud of elements.</p>
+  <div class="adt-container">
+    <span class="name">S1</span>
+    <ul class="set">
+      <div class="empty">&nbsp;</div>
+    </ul>
+  </div>
+  <div class="adt-container">
+    <span class="name">S2</span>
+    <ul class="set">
+      <li><div>"Cat"</div></li>
+    </ul>
+  </div>
+  <div class="adt-container">
+    <span class="name">S3</span>
+    <ul class="set">
+      <li><div>"Cat"</div></li>
+      <li><div>"Mars"</div></li>
+      <li><div>"Hyphen"</div></li>
+    </ul>
+  </div>
+  
+  <h2>Multisets</h2>
+  <p>This one is also kinda crazy.  Nobody writes multisets this way.  But no standard notation exists.  That's okay, though, because a pictorial representation of a multiset should make it really clear that the elements of the set have no particular order (except maybe bundling of multiple copies of the same item).</p>
+  <div class="adt-container">
+    <span class="name">M1</span>
+    <ul class="multiset">
+      <li><div>"Ball"</div></li>
+      <li><div>"Dog"</div></li>
+      <li><div>"Ball"</div></li>
+    </ul>
+  </div>
+</body>
+</html>

@@ -1,0 +1,87 @@
+/*
+CSS for schedule pages.
+
+By Jadrian Miles.
+*/
+#asgns {
+  border: 1px solid #23363D;
+  border-collapse: collapse;
+  margin: 2em auto 0em auto;
+  text-align: left;
+}
+
+#asgns td {
+  border: 1px solid #23363D;
+  padding: 0.7em 1.1em 0.7em 0.7em;
+  vertical-align: top;
+}
+
+#asgns th {
+  background: #EEFBFF;
+  border: 1px solid #23363D;
+  /*border-bottom: 3px double black;*/
+  padding: 0.7em 1.1em 0.7em 0.7em;
+}
+
+#asgns .section {
+  font-size: 125%;
+  padding: 1.2ex;
+  background: #EEFBFF;
+}
+
+#asgns .section div.subtitle {
+  font-size: 70%;
+  margin-left: 1em;
+  margin-bottom: -0.6em;
+}
+#asgns .section div.subtitle::before {
+  content: "(";
+}
+#asgns .section div.subtitle::after {
+  content: ")";
+}
+
+#asgns .unit {
+  font-size: 150%;
+  padding-top: 3ex;
+  padding-bottom: 1.5ex;
+  text-align: center;
+  background: #EEFBFF;
+  border-top: 3px double;
+}
+
+#asgns tr:first-of-type > td.unit {
+  border-top: 1px solid;
+}
+
+#asgns .current {
+  border: 3px solid #EA7E6B !important;
+}
+
+#asgns .current td {
+  background-color: #F7CDC6 !important;
+}
+
+.hwsubtitle {
+  font-size: 85%;
+  font-style: italic;
+}
+
+.class_links {
+  margin-top: 0px;
+  font-size: 85%;
+}
+.class_links li {
+  margin: 0px;
+}
+
+/* Adaptations for small screens/windows */
+@media screen and (max-width: 815px) {
+  body {
+    font-size: 80%;
+    margin: 2%;
+  }
+  #asgns td {
+    padding: 0.3em 0.5em 0.3em 0.4em;
+  }
+}

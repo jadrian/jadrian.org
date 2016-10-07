@@ -1,0 +1,690 @@
+/*
+CSS for course materials
+By Jadrian Miles
+
+Note that this file must be included in the header *after* the syntaxhighlighter
+style files, to fix width bugs.
+
+== HTML Style Guide ==
+
+Tags should be used as follows:
+<strong>
+  Important points.
+<em>
+  Less important points.
+<code>
+  Pre-existing text presented to the user by the computer.  Classes include:
+   - <none>: Filenames, names of programs or commands as used in prose, etc.
+   - gui: Text that's part of a GUI element, like a menu title.
+   - cli: Text shown on the command line, or as command-line output.
+<kbd>
+  Text the user types into the computer.  By default this is assumed to be typed
+  into a CLI, but there's also a class for GUI text input:
+   - key: A single key that the user presses.
+   - gui: Text that's typed into a GUI text box.
+   - cli: Text that's typed into a CLI.
+<pre>
+  Multi-line code.  Classes:
+   - out: Output from a program, or an interactive session.
+          (Use <span class="in"> to mark user input in interactive sessions.)
+   - in: Input to a program, or code to be typed in.
+   - list: The contents of an existing program.
+   - anatomy: A code snippet that is typeset large (to discuss syntax, etc.)
+
+Within <code>, <kbd>, and <pre> elements, spans indicate important sub-parts.
+Use the following classes:
+   - in: (only for pre.out) Text entered by the user.
+   - repl: Text that ought to be replaced with something.
+   - note1: A highlighted sub-part, to be explained in the surrounding text.
+            Classes .note1 through .note9 are defined, and .note0 is black-on-
+            white.  You may also set a <code> span to itself have class noteX.
+
+div.section is for demarcating individual sections in the text.  These divs are
+made to nest.
+
+div.example-box creates a centered box set off from the text that
+contains whatever example you want to show.  This could be an image, a code
+snippet, etc.  The "taskbox" class (inside an "example-box") is for instructions
+or calling out discrete, concrete tasks in assignments.  The "textbox" class is
+for example text.
+
+div.pseudocodebox, with a ul inside it, is for pseudocode instructions; you may
+also add comments with span.comment.
+*/
+
+@import url("http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic");
+
+/* Page width stuff for multiple platforms and printing. */
+@media screen, projection, tv {
+  body {
+    margin: 10%;
+  }
+}
+@media screen and (max-width:750px) {
+  body {
+    margin: 2%;
+  }
+}
+@media print {
+  body {
+    margin: 0px;
+    padding: 0px;
+  }
+}
+
+/* Layout for Template and Basic Elements */
+body {
+  line-height: 135%;
+  font-family: 'Lora', serif;
+  font-size: 91%;
+}
+@media print {
+  body {
+    font-size: 65%;
+  }
+}
+#head-l {
+  float: left;
+  width: 20%;
+  margin: 0px;
+}
+#header {
+  height: 3ex;
+}
+#head-c {
+  float: left;
+  text-align: center;
+  width: 60%;
+  margin: 0px;
+}
+#head-r {
+  float: right;
+  text-align: right;
+  width: 20%;
+  margin: 0px;
+}
+#footnotes {
+  margin-top: 4em;
+  font-size: 85%;
+}
+@media print {
+  #footnotes {
+    margin-top: 1em;
+    border-top: 1px dashed #d5dbdd;
+    padding: 0em;
+  }
+}
+h1 {
+  margin: 1.8ex 0ex 3ex 0ex;
+  text-align: center;
+  line-height: 100%;
+}
+#date {
+  text-align: center;
+}
+h2 {
+  margin-top: 3.5ex;
+  margin-bottom: 0.66em;
+}
+h3 {
+  margin-top: 2ex;
+  margin-bottom: 0.5ex;
+}
+li {
+  margin: 1.75ex 0ex;
+}
+li li {
+  margin: 1ex 0ex;
+}
+li *:last-child {
+  margin-bottom: 0px;
+}
+ul, dl {
+  padding-left: 1.5em;
+}
+ol {
+  padding-left: 2em;
+}
+dt {
+  font-style: italic;
+  font-weight: bold;
+}
+dd {
+  margin-left: 1.5em;
+  margin-bottom: 1.75ex;
+}
+dd :first-child {
+  margin-top: 0px;
+}
+.example-box img {
+  display: block;
+}
+.inlinefigure {
+  vertical-align: middle;
+  display: inline;
+}
+code, kbd {
+  white-space: pre;
+  display: inline-block;
+  font-style: normal;
+}
+.asciiart {
+  font-family: 'Menlo', 'Lucida Console', 'Bitstream Vera Sans Mono', 'Courier New', Monaco, Courier, monospace;
+  font-size: 85%;
+  line-height: 2.2ex;
+}
+.pseudocodebox .comment {
+  font-size: 85%;
+}
+
+/* Layout for User Elements */
+div.section {
+  margin-top: 1em;
+  padding-left: 1.5ex;
+}
+div.section:after{
+  /* Force section to enclose floating elements too, per
+  http://stackoverflow.com/a/7817313 and
+  http://stackoverflow.com/a/6681806 */
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+div.taskbox {
+  padding: 1ex;
+  padding-right: 2ex;
+}
+div.example-box {
+  margin: 2.5ex 0px;
+  text-align: center;
+}
+div.float-right {
+  float: right;
+  margin: 0em 0em 1em 1em;
+}
+div.example-box > * {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+.fullwidth {
+    width: 100%;
+}
+@media print {
+  .print-hide {
+    display: none;
+  }
+  .print-show {
+    display: initial;
+  }
+  .print-float-right {
+    float: right;
+    margin: 0em 0em 1em 1em;
+  }
+}
+@media screen {
+  .print-hide {
+    display: initial;
+  }
+  .print-show {
+    display: none;
+  }
+}
+#toc {
+  float: right;
+  margin: 0em 0em 1em 2em;
+}
+@media screen and (max-width:650px) {
+  #toc {
+    float: none;
+    margin: 0em auto 1em auto;
+    width: 15em;
+  }
+}
+#toc * {
+  margin: 0px;
+}
+div.text-sample {
+  width: 80%;
+}
+div.example-box *:first-child, div.textbox *:first-child, div.taskbox *:first-child {
+  margin-top: 0px;
+}
+div.example-box *:last-child, div.textbox *:last-child, div.taskbox *:last-child {
+  margin-bottom: 0px;
+}
+sup, sub {
+  height: 0;
+  line-height: 1;
+  vertical-align: baseline;
+  _vertical-align: bottom;
+  position: relative;
+}
+sup {
+  bottom: 1ex;
+}
+sub {
+  top: .5ex;
+}
+
+
+/* Styling for Template and Basic Elements */
+body {
+  /*background-color: #FCFEFF;*/
+  color: #23363D;
+}
+@media print {
+  body {
+    background-color: #FFFFFF;
+    color: #000000;
+  }
+}
+div.section {
+  border-left: 3px solid #F0F4FC;
+}
+div.pseudocodebox {
+  border: 1px solid #AEB5C1;
+  border-left-width: 3px;
+}
+div.taskbox {
+  border: 1px solid #F0E0E0;
+  border-left-width: 3px;
+  background-color: #FFFCFC;
+}
+div.textbox {
+  border: 2px solid #D5DBE6;
+  border-left-width: 3px;
+  padding: 1.2em;
+  padding-right: 1.4em;
+  background-color: #F0F4FC;
+  font-size: 90%;
+}
+a, a:visited, .fakelink {
+  color: #0B86B5;
+  text-decoration: underline;
+  cursor: pointer;
+}
+a:hover, .fakelink:hover {
+  background-color: #FAFAD0;
+  color: #A0363D;
+  text-decoration: none;
+  outline: 2px solid #F0E0A0;
+  cursor: pointer;
+}
+ol ol {
+  list-style-type: lower-latin;
+}
+
+
+/* Text Styling for User Elements */
+del, s, strike {  /* strike is deprecated -- http://html5doctor.com/ins-del-s */
+  font-size: 80%;
+  line-height: 100%;
+  font-style: italic;
+  text-decoration: line-through;
+  color: #A0A6A8;
+}
+.nowrap {
+  white-space: nowrap;
+}
+code {
+  border: 1px solid #C0C0C0;
+  padding: 0.15ex 0.5ex 0.25ex 0.5ex;
+}
+code.gui {
+  font-family: serif;
+  padding: 0.05ex 0.2ex 0.1ex 0.2ex;
+  outline: 1px solid #D0D0D0;
+  border-top: 1px solid #FFFFFF;
+  border-left: 1px solid #FFFFFF;
+  border-right: none;
+  border-bottom: none;
+  /* Gradients by Colorzilla: http://www.colorzilla.com/gradient-editor */
+  background: #f8f8f8; /* Old browsers */
+  background: -moz-linear-gradient(top, #f8f8f8 0%, #f0f0f0 43%, #e5e5e5 61%, #f0f0f0 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f8f8f8), color-stop(43%,#f0f0f0), color-stop(61%,#e5e5e5), color-stop(100%,#f0f0f0)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #f8f8f8 0%,#f0f0f0 43%,#e5e5e5 61%,#f0f0f0 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #f8f8f8 0%,#f0f0f0 43%,#e5e5e5 61%,#f0f0f0 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #f8f8f8 0%,#f0f0f0 43%,#e5e5e5 61%,#f0f0f0 100%); /* IE10+ */
+  background: linear-gradient(to bottom, #f8f8f8 0%,#f0f0f0 43%,#e5e5e5 61%,#f0f0f0 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f8f8', endColorstr='#f0f0f0',GradientType=0 ); /* IE6-9 */
+}
+code.cli {
+  border: 1px solid #849096;
+  padding: 0.15ex 1ex 0.25ex 1ex;
+  color: #FCFEFF;
+  /* Gradients by Colorzilla: http://www.colorzilla.com/gradient-editor */
+  background: #23363d; /* Old browsers */
+  background: -moz-linear-gradient(top, #23363d 0%, #324d56 75%, #23363d 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#23363d), color-stop(75%,#324d56), color-stop(100%,#23363d)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #23363d 0%,#324d56 75%,#23363d 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #23363d 0%,#324d56 75%,#23363d 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #23363d 0%,#324d56 75%,#23363d 100%); /* IE10+ */
+  background: linear-gradient(to bottom, #23363d 0%,#324d56 75%,#23363d 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#23363d', endColorstr='#23363d',GradientType=0 ); /* IE6-9 */
+}
+kbd {
+  border: 2px solid #A2DCE5;
+  padding: 0.15ex 1ex 0.25ex 1ex;
+  /* Gradients by Colorzilla: http://www.colorzilla.com/gradient-editor */
+  background: #f6fdfe; /* Old browsers */
+  background: -moz-linear-gradient(top, #f6fdfe 0%, #ecf8fa 51%, #e9f7f9 75%, #edf9fb 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f6fdfe), color-stop(51%,#ecf8fa), color-stop(75%,#e9f7f9), color-stop(100%,#edf9fb)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #f6fdfe 0%,#ecf8fa 51%,#e9f7f9 75%,#edf9fb 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #f6fdfe 0%,#ecf8fa 51%,#e9f7f9 75%,#edf9fb 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #f6fdfe 0%,#ecf8fa 51%,#e9f7f9 75%,#edf9fb 100%); /* IE10+ */
+  background: linear-gradient(to bottom, #f6fdfe 0%,#ecf8fa 51%,#e9f7f9 75%,#edf9fb 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6fdfe', endColorstr='#edf9fb',GradientType=0 ); /* IE6-9 */
+}
+kbd.gui {
+  border: 2px solid #A2DCE5;
+  padding: 0.15ex 1ex 0.25ex 1ex;
+  /* Gradients by Colorzilla: http://www.colorzilla.com/gradient-editor */
+  background: #f6fdfe; /* Old browsers */
+  background: -moz-linear-gradient(top, #f6fdfe 0%, #ecf8fa 51%, #e9f7f9 75%, #edf9fb 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f6fdfe), color-stop(51%,#ecf8fa), color-stop(75%,#e9f7f9), color-stop(100%,#edf9fb)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #f6fdfe 0%,#ecf8fa 51%,#e9f7f9 75%,#edf9fb 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #f6fdfe 0%,#ecf8fa 51%,#e9f7f9 75%,#edf9fb 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #f6fdfe 0%,#ecf8fa 51%,#e9f7f9 75%,#edf9fb 100%); /* IE10+ */
+  background: linear-gradient(to bottom, #f6fdfe 0%,#ecf8fa 51%,#e9f7f9 75%,#edf9fb 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6fdfe', endColorstr='#edf9fb',GradientType=0 ); /* IE6-9 */
+}
+kbd.cli {
+  border: 2px solid #A2DCE5;
+  padding: 0.15ex 1ex 0.25ex 1ex;
+  /* Gradients by Colorzilla: http://www.colorzilla.com/gradient-editor */
+  background: #f6fdfe; /* Old browsers */
+  background: -moz-linear-gradient(top, #f6fdfe 0%, #ecf8fa 51%, #e9f7f9 75%, #edf9fb 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f6fdfe), color-stop(51%,#ecf8fa), color-stop(75%,#e9f7f9), color-stop(100%,#edf9fb)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #f6fdfe 0%,#ecf8fa 51%,#e9f7f9 75%,#edf9fb 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #f6fdfe 0%,#ecf8fa 51%,#e9f7f9 75%,#edf9fb 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #f6fdfe 0%,#ecf8fa 51%,#e9f7f9 75%,#edf9fb 100%); /* IE10+ */
+  background: linear-gradient(to bottom, #f6fdfe 0%,#ecf8fa 51%,#e9f7f9 75%,#edf9fb 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6fdfe', endColorstr='#edf9fb',GradientType=0 ); /* IE6-9 */
+}
+kbd.key {
+  font-family: sans-serif;
+  font-size: 90%;
+  line-height: 130%;
+  font-weight: normal;
+  border: 2px outset #D0D0D0;
+  padding: 0.15ex 0.5ex 0.15ex 0.5ex;
+  /* Gradients by Colorzilla: http://www.colorzilla.com/gradient-editor */
+  background: #f8f8f8; /* Old browsers */
+  background: -moz-linear-gradient(top, #f8f8f8 0%, #f0f0f0 43%, #e5e5e5 61%, #f0f0f0 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f8f8f8), color-stop(43%,#f0f0f0), color-stop(61%,#e5e5e5), color-stop(100%,#f0f0f0)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #f8f8f8 0%,#f0f0f0 43%,#e5e5e5 61%,#f0f0f0 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #f8f8f8 0%,#f0f0f0 43%,#e5e5e5 61%,#f0f0f0 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #f8f8f8 0%,#f0f0f0 43%,#e5e5e5 61%,#f0f0f0 100%); /* IE10+ */
+  background: linear-gradient(to bottom, #f8f8f8 0%,#f0f0f0 43%,#e5e5e5 61%,#f0f0f0 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f8f8', endColorstr='#f0f0f0',GradientType=0 ); /* IE6-9 */
+}
+pre {
+  border: 1px solid #C0C0C0;
+  padding: 1ex 2ex;
+}
+pre.out {
+  outline: 2px solid #0D252D;
+  border: 1px solid #849096;
+  padding: 1ex 2ex;
+  color: #FCFEFF;
+  /* Gradients by Colorzilla: http://www.colorzilla.com/gradient-editor */
+  background: #23363d; /* Old browsers */
+  background: -moz-linear-gradient(top, #23363d 0%, #324d56 75%, #23363d 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#23363d), color-stop(75%,#324d56), color-stop(100%,#23363d)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #23363d 0%,#324d56 75%,#23363d 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #23363d 0%,#324d56 75%,#23363d 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #23363d 0%,#324d56 75%,#23363d 100%); /* IE10+ */
+  background: linear-gradient(to bottom, #23363d 0%,#324d56 75%,#23363d 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#23363d', endColorstr='#23363d',GradientType=0 ); /* IE6-9 */
+}
+pre.out span.in {
+  color: #FA8E82;
+  border-bottom: 1px dotted #FCFEFF;
+}
+pre.in {
+  border: 2px solid #A2DCE5;
+  padding: 1ex 2ex;
+  /* Gradients by Colorzilla: http://www.colorzilla.com/gradient-editor */
+  background: #f6fdfe; /* Old browsers */
+  background: -moz-linear-gradient(top, #f6fdfe 0%, #ecf8fa 51%, #e9f7f9 75%, #edf9fb 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f6fdfe), color-stop(51%,#ecf8fa), color-stop(75%,#e9f7f9), color-stop(100%,#edf9fb)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #f6fdfe 0%,#ecf8fa 51%,#e9f7f9 75%,#edf9fb 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #f6fdfe 0%,#ecf8fa 51%,#e9f7f9 75%,#edf9fb 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #f6fdfe 0%,#ecf8fa 51%,#e9f7f9 75%,#edf9fb 100%); /* IE10+ */
+  background: linear-gradient(to bottom, #f6fdfe 0%,#ecf8fa 51%,#e9f7f9 75%,#edf9fb 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6fdfe', endColorstr='#edf9fb',GradientType=0 ); /* IE6-9 */
+}
+pre.anatomy {
+  font-size: 1.5em;
+  line-height: 2.6ex;
+}
+.syntaxhighlighter {
+  border: 1px solid #AEB5C1;
+  border-left-width: 3px;
+  padding: 1ex 2ex;
+  width: auto !important;
+}
+.syntaxhighlighter * {
+  /* Avoid overrunning the right margin when nested inside a div.section */
+  width: auto !important;
+}
+pre {
+  text-align: left !important;
+}
+code a, kbd a {
+  text-decoration: none;
+}
+.pseudocodebox .comment {
+  color: #578798;
+}
+.repl {
+  border-bottom: 1px dotted red;
+  background-color: #FFF0F0;
+  cursor: help;
+}
+span.note1, span.note2, span.note3,
+span.note4, span.note5, span.note6,
+span.note7, span.note8, span.note9,
+span.note0 {
+  /* We display as inline-block to show nesting. Note that this means that spans
+  in running body text (like the corresponding note descriptions) will not wrap
+  in the middle.  So you should avoid using long spans in this case. */
+  display: inline-block;
+  padding: 1px;
+  margin: 1px;
+}
+/* Colors from the vis4.net HCL visualization tool:
+http://vis4.net/labs/colorvis/embed.html?m=hcl&gradients=3
+
+First set of 3: C~=1.68; 3 steps in H at constant L (just below max L in gamut)
+Decimal RGB:
+    230  87  70
+    41 155  61
+    55 140 213
+Converted to hex and lightened 4x (colortools.lighten(x, 0.25)):
+    e65746 ffd7d2
+    299b3d d0ffd8
+    378cd5 cfe9ff
+
+Second set: C~=1.06; 3 constant-L steps, offset 60° in H from the first set, and
+slightly lower L.
+Decimal RGB:
+    155 133 49
+    19 150 147
+    187 110 148
+Converted to hex and lightened 4x:
+    9b8531 fff5d3
+    139693 c7fffd
+    bb6e94 ffe4f1
+
+Third set: C~=1.73; 4 nearly-equidistant H values at very low L, one of which
+(between green and blue) is out of gamut.  Small phase offset.
+Decimal RGB:
+    89 43 3
+    22 64 13
+    72 45 84
+Converted to hex and lightened 8x (colortools.lighten(x, 0.12)):
+    592b03 ffefe1
+    16400d eaffe6
+    482d54 faf0ff 
+*/
+.note0 {
+  border: 1px dotted #606060;
+  color: #23363D;
+  background-color: #FFFFFF;
+} 
+.note1 {
+  border: 1px dotted #e65746;
+  color: #e65746;
+  background-color: #ffd7d2;
+}
+.note2 {
+  border: 1px dotted #299b3d;
+  color: #299b3d;
+  background-color: #d0ffd8;
+}
+.note3 {
+  border: 1px dotted #378cd5;
+  color: #378cd5;
+  background-color: #cfe9ff;
+}
+.note4 {
+  border: 1px dotted #bb6e94;
+  color: #bb6e94;
+  background-color: #ffe4f1;
+}
+.note5 {
+  border: 1px dotted #139693;
+  color: #139693;
+  background-color: #c7fffd;
+}
+.note6 {
+  border: 1px dotted #9b8531;
+  color: #9b8531;
+  background-color: #fff5d3;
+}
+.note7 {
+  border: 1px dotted #592b03;
+  color: #592b03;
+  background-color: #ffefe1;
+}
+.note8 {
+  border: 1px dotted #16400d;
+  color: #16400d;
+  background-color: #eaffe6;
+}
+.note9 {
+  border: 1px dotted #482d54;
+  color: #482d54;
+  background-color: #faf0ff;
+}
+
+/* By default, tables have no borders. */
+table {
+  border: 1px solid #23363D;
+  text-align: center;
+  border-collapse: collapse;
+  margin: 1em 0em;
+}
+td, th {
+  padding: 0.5ex 1ex;
+}
+td *:first-child, th *:first-child {
+  margin-top: 0px;
+}
+td *:last-child, th *:last-child {
+  margin-bottom: 0px;
+}
+
+/* Apply this to any table and the row colors will alternate. */
+table.alternate tr:nth-child(even) {
+  background-color: #e6edfe;
+}
+
+/* Apply this to any table to add extra cell padding. */
+table.breathe td, table.breathe th {
+  padding: 1.5ex 2ex;
+}
+
+/* Small tweaks for tables meant to contain parallel columns of short bits of
+   text.  May look weird (not broken, but badly styled) if the text wraps
+   within a cell. */
+table.texttable {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  text-align: left;
+}
+table.texttable th, table.texttable td {
+  vertical-align: top;
+}
+
+/* table.grid: all grid lines */
+table.grid td, table.grid th {
+  border-left: 1px solid #7E8E94;
+  border-top: 1px solid #7E8E94;
+}
+table.grid tr:first-child * {
+  border-top: 0px;
+}
+table.grid td:first-child, table.grid th:first-child {
+  border-left: 0px;
+}
+table.grid tr:first-child > th {
+  border-bottom: 3px double #7E8E94;
+}
+
+/* table.excel: fill the first row and column with th; then you get an edge
+   between these and the main content of the table. */
+table.excel tr:first-child {
+  border-bottom: 1px solid #7E8E94;
+}
+table.excel tr th:first-child {
+  border-right: 1px solid #7E8E94;
+}
+
+/* table.fencepost: an edge between the first row and the second, and between
+   every pair of columns. */
+table.fencepost tr:first-child {
+  border-bottom: 1px solid #7E8E94;
+}
+table.fencepost tr.newhead {
+  border-top: 3px double #7E8E94;
+  border-bottom: 1px solid #7E8E94;
+}
+table.fencepost td, table.fencepost th {
+  border-left: 1px solid #7E8E94;
+}
+table.fencepost td:first-child, table.fencepost th:first-child {
+  border-left: 0px;
+}
+
+@media print {
+  h1 {
+    margin: 0.8ex 0ex 1ex 0ex;
+  }
+  h2 {
+    margin-top: 1.5ex;
+    margin-bottom: 0.4ex;
+  }
+  h3 {
+    margin-top: 1ex;
+    margin-bottom: 0.4ex;
+  }
+  li {
+    margin: 1ex 0ex;
+  }
+  li li {
+    margin: 0.5ex 0ex;
+  }
+  table {
+    font-size: 60%;
+  }
+  div.example-box {
+    margin: 1ex 0px;
+  }
+}

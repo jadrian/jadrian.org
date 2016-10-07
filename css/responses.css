@@ -1,0 +1,80 @@
+/* CSS for the deeply-nested Reading Responses page
+By Jadrian Miles
+For CS318, Medical Image Analysis, at Carleton College
+Winter 2014
+
+Color palette courtesy http://colorbrewer2.org/
+© Cynthia Brewer, Mark Harrower and The Pennsylvania State University
+*/
+
+.question, h3, .toggle_alike {
+  cursor: pointer;
+}
+
+body {
+  counter-reset: q;  /* Continuous numbering of responses across sections. */
+}
+
+#preface {
+  margin-bottom: 4ex;
+}
+
+.section {
+  padding-bottom: 0.8ex;
+}
+.jadrian, .grp0, .grp1, .grp2 {
+  border-bottom: 2px solid;
+}
+.jadrian {
+  /* Base color: #bebada = HSL 248 30 79  */
+  border-color: #9e91f3 !important;  /* 248 80 76 */
+  background-color: #f1effa;  /* 248 55 96 */
+}
+.grp0 {
+  /* Base color: #fb8072 = HSL 6 94 72 */
+  border-color: #fb8072 !important; /* 6 94 72 */
+  background-color: #fcefed; /* 6 72 96 */
+}
+.grp1 {
+  /* Base color: #8dd3c7 = HSL 170 44 69 */
+  border-color: #4ad9c1 !important; /* 170 65 57 */
+  background-color: #e5f5f2; /* 170 44 93 */
+}
+.grp2 {
+  /* Base color: #ffffb3 = HSL 60 100 85 */
+  border-color: #efef76 !important; /* 60 79 70 */
+  background-color: #ffffd6; /* 60 100 92 */
+}
+ol {
+  list-style: none;
+  margin: 0ex;
+  padding: 0ex;
+}
+ol > li { margin: 2ex 0 3ex 5.5ex; }
+ol > li:before {
+  content: counter(q) '. ';
+  counter-increment: q;
+  position: absolute;
+  margin-left: -5.5ex;
+  text-align: right;
+  width: 4.75ex;
+}
+li .section {
+  margin: 0.5ex 0ex 1ex 0ex;
+  padding-top: 0.8ex;
+  padding-right: 1ex;
+  font-size: 90%;
+  color: #001040;
+}
+li .section > p:first-child {
+  margin-top: 0ex;
+}
+li .section:last-child {
+  margin-bottom: 0ex;
+}
+ol > li:last-child {
+  margin-bottom: 0ex;
+}
+#responses h3 {
+  margin-top: 4ex;
+}

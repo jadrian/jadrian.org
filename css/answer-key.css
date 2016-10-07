@@ -1,0 +1,87 @@
+/*
+Stylesheet for an answer key
+By Jadrian Miles
+
+Handy classes for making solution sets that match the LaTeX exam package.
+
+To use:
+<ol class="qpart">
+  <li>Solution to part (a)</li>
+  <li>Solution to part (b) includes a table!
+    <table class="answergrid">
+      <tr><td>Upper-left answer</td><td>Upper-right answer</td></tr>
+      <tr><td>Lower-left answer</td><td>Lower-right answer</td></tr>
+    </table>
+  </li>
+</ol>
+*/
+ol.qpart {
+  counter-reset: qpart;
+  list-style-type: none;
+}
+ol.qpart > li:before {
+  content: "(" counter(qpart, lower-alpha) ") ";
+  counter-increment: qpart;
+  position: absolute;
+  margin-left: -6ex;
+  text-align: right;
+  width: 4.75ex;
+}
+ol.qpart > li {
+  margin-left: 1ex;
+}
+ol.qpart > li :first-child {
+  margin-top: 0px;
+}
+
+ol.qpart-inline {
+  counter-reset: qpart;
+  list-style-type: none;
+  margin-left: -3.5em;
+  /* Note that this negative margin interacts with the 1.5em padding placed on
+  all lists by sty.css. */
+}
+ol.qpart-inline > li:before {
+  content: "(" counter(qpart, lower-alpha) ") ";
+  counter-increment: qpart;
+  position: absolute;
+  margin-left: -6ex;
+  text-align: right;
+  width: 4.75ex;
+}
+ol.qpart-inline > li {
+  display: inline-block;
+  margin-left: 4em;
+  margin-top: 0px;
+  vertical-align: top;
+}
+ol.qpart-inline > li :first-child {
+  margin-top: 0px;
+}
+
+table.answergrid {
+  border: none;
+  margin: 1em 0em 0.5em 0em;
+}
+table.answergrid td {
+  padding: 1.5ex 2em;
+  margin: 0px;
+  border: none;
+  border-right: 1px dashed black;
+  border-bottom: 1px dashed black;
+  vertical-align: middle;
+}
+table.answergrid td:last-child {
+  border-right: none;
+}
+table.answergrid tr:last-child td {
+  border-bottom: none;
+}
+
+table.noborder td {
+  border: none;
+}
+
+span.algname {
+  font-variant: small-caps;
+}

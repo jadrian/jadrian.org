@@ -1,0 +1,351 @@
+/* CSS styling for ADT diagrams
+By Jadrian Miles
+
+To use:
+
+<div class="adt-container">
+  <span class="name">L</span>
+  <ul class="list">
+    <li><div>"A"</div></li>
+    <li><div>"B"</div></li>
+  </ul>
+</div>
+
+<div class="adt-container">
+  <span class="name">S</span>
+  <ul class="stack">
+    <li><div>"A"</div></li>
+    <li><div>"B"</div></li>
+  </ul>
+</div>
+
+(Note that stack contents are specified from the top down.)
+
+----
+To indicate an empty ADT:
+
+<div class="adt-container">
+  <span class="name">S</span>
+  <ul class="stack">
+    <div class="empty">&nbsp;</div>
+  </ul>
+</div>
+
+You can also put list items inside the empty div in order to force the
+container glyph to match the size of the empty container, when you only have
+one item in the ADT.  (This is useful for stacks, queues, and priority queues.)
+
+----
+To customize the width of each entry, give your ul an id, and then create a
+custom rule:
+    ul#custom1 > li > div {
+      width: 4em;
+    }
+"width: auto;" makes each box just accommodate its contents --- this works okay
+for queues, for example, but throws off index positions for lists.
+
+If you customize the width of boxes in a list, you'll also have to make the
+index boxes match, or they'll be off-center.  However, since the text size for
+the indices is 80% the size of the contents, you need to divide the custom width
+by 0.8.  So 4em / 0.8 = 5em:
+    ul#custom1 > li:before {
+      width: 5em;
+      margin-right: -5em;
+    }
+*/
+
+div.adt-container {
+  margin: 0ex 4ex 1ex 0ex;
+  /*padding: 1ex 2ex;
+  border: 1px dotted blue;*/
+  display: inline-block;
+}
+div.adt-container > span.name {
+  margin-right: 2ex;
+}
+div.adt-container > span.name:after {
+  content: ":";
+}
+
+div.adt-container .hl {
+  background-color: #DBF3FD;
+}
+div.adt-container .hl2 {
+  background-color: #FEF6C0;
+}
+
+/************************************ LIST ************************************/
+div.adt-container ul.list {
+  vertical-align: middle;
+  counter-reset: list-adt-index -1; /* Indexing starts at 0. */
+  list-style-type: none;
+  border-collapse: collapse;
+  height: 5.5ex;
+  padding: 0px;
+  margin: 0px;
+  display: inline-block;
+}
+div.adt-container ul.list > div.empty {
+  display: inline-block;
+  height: 3ex;
+  width: 1ex;
+  border: 1px solid black;
+}
+div.adt-container ul.list > li:before {
+  content: counter(list-adt-index, decimal);
+  counter-increment: list-adt-index;
+  font-size: 80%;
+  /* Move each index below the corresponding list item. */
+  position: relative;
+  top: 3.75ex;
+  display: inline-block;
+  /* The width of the box containing the item index must match the width of
+  the box containing the item, so that the index is properly centered.
+  Since the text is 80% as big, 3em at full size is 3/0.8 = 3.75em at 80%. */
+  width: 3.75em;
+  /* Since we're using relative positioning, each index is inside a CSS box
+  that affects the rest of the layout; namely; it scoots the list item's
+  content to the right.  A negative right margin counteracts that scoot.
+  Since the text is 80% as big, 3em at full size is 3/0.8 = 3.75em at 80%. */
+  margin-right: -3.75em;
+  text-align: center;
+}
+div.adt-container ul.list.no-indices > li:before {
+  content: none;
+}
+div.adt-container ul.list > li {
+  display: table-cell;
+  border: 1px solid black;
+  padding: 0.2ex 0.5ex;
+  margin: 0px;
+}
+div.adt-container ul.list > li > div {
+  display: inline-block;
+  width: 3em;
+  text-align: center;
+}
+
+
+/*********************************** STACK ***********************************/
+div.adt-container ul.stack {
+  vertical-align: middle;
+  list-style-type: none;
+  margin: 0px;   /*0px 4ex 0px 0px;*/ /* Second set if top is labeled. */
+  padding: 0.5ex;
+  display: inline-block;
+  border: 1px solid black;
+  border-top: 0px;
+  min-height: 1.5em;
+  min-width: 3.5em;
+}
+/*
+div.adt-container ul.stack:before {
+  content: "(top)";
+  display: block;
+  font-size: 80%;
+  text-align: right;
+  font-style: italic;
+  position: relative;
+  top: -2ex;
+  right: -6ex;
+  margin-bottom: -3.1ex;
+}
+*/
+div.adt-container ul.stack > div.empty {
+  display: block;
+  height: 3.2ex;
+  margin-top: 4.9ex;
+}
+div.adt-container ul.stack li {
+  margin: 0.5ex;
+  padding: 0ex;
+}
+div.adt-container ul.stack li:first-child {
+  margin-top: 1.5ex;
+}
+div.adt-container ul.stack li > div {
+  display: inline-block;
+  width: 3em;
+  text-align: center;
+  border: 1px dotted black;
+}
+
+
+/*********************************** QUEUE ***********************************/
+div.adt-container ul.queue {
+  vertical-align: middle;
+  list-style-type: none;
+  height: 0px;
+  text-align: right;
+  padding: 0.8ex;
+  margin: 1.5ex 0.5ex 3.7ex 0px;
+  display: inline-block;
+  border: 1px solid black;
+  border-top: 0px;
+  position: relative;
+  top: 1.5ex;
+}
+div.adt-container ul.queue:before {
+  content: "(back)";
+  font-size: 80%;
+  font-style: italic;
+  display: inline-block;
+  width: 0px;
+  position: relative;
+  top: 1ex;
+  left: -2ex;
+}
+div.adt-container ul.queue:after {
+  content: "(front)";
+  font-size: 80%;
+  font-style: italic;
+  display: inline-block;
+  width: 0px;
+  position: relative;
+  top: 1ex;
+  right: 3.5ex;
+}
+div.adt-container ul.queue > div.empty {
+  display: inline-block;
+  height: 2ex;
+  width: 7em;
+  margin: 0px;
+  padding: 0px;
+}
+div.adt-container ul.queue li {
+  display: inline-block;
+  margin: 0px;
+  position: relative;
+  top: -3ex;
+}
+div.adt-container ul.queue li > div {
+  display: inline-block;
+  width: 4.2em;
+  text-align: center;
+  border: 1px dotted black;
+}
+
+/********************************* DICTIONARY *********************************/
+div.adt-container dl.dict {
+  vertical-align: middle;
+  list-style-type: none;
+  display: inline-block;
+  padding: 0ex 2.2ex;
+  margin: 1.5ex 0ex;
+}
+div.adt-container dl.dict:before {
+  content: "{";
+  margin-left: -2.2ex;
+  margin-right: 1ex;
+}
+div.adt-container dl.dict:after {
+  content: "}";
+  margin-left: 1ex;
+}
+div.adt-container dl.dict div.empty {
+  display: inline-block;
+  width: 0px;
+  margin: 0ex -0.5ex 0.5ex -0.5ex;
+}
+div.adt-container dl.dict dt {
+  font-style: normal;
+  font-weight: normal;
+  display: inline-block;
+  margin: 0ex 0ex 0.5ex 0ex;
+}
+div.adt-container dl.dict dt:after {
+  content: "\2192";
+  margin: 0px 0.5ex;
+}
+div.adt-container dl.dict dd {
+  display: inline-block;
+  margin: 0ex 0ex 0.5ex 0ex;
+}
+div.adt-container dl.dict dd:after {
+  content: ";";
+  margin: 0px 1ex;
+}
+div.adt-container dl.dict dd:last-child:after {
+  content: none;
+}
+
+/************************************ SET ************************************/
+div.adt-container ul.set {
+  vertical-align: middle;
+  list-style-type: none;
+  display: inline-block;
+  margin: 0px;
+  padding: 0px;
+}
+div.adt-container ul.set:before {
+  content: "{";
+  margin-right: 1ex;
+}
+div.adt-container ul.set:after {
+  content: "}";
+  margin-left: 1ex;
+}
+div.adt-container ul.set div.empty {
+  display: inline-block;
+  width: 0px;
+  margin: 0ex -0.5ex 0ex -0.5ex;
+}
+div.adt-container ul.set li {
+  display: inline-block;
+  margin: 0px;
+}
+div.adt-container ul.set li > div {
+  display: inline-block;
+  margin: 0px;
+}
+div.adt-container ul.set li:after {
+  content: ",";
+  margin-right: 0.5ex;
+}
+div.adt-container ul.set li:last-child:after {
+  content: none;
+}
+
+/********************************** MULTISET **********************************/
+div.adt-container ul.multiset {
+  vertical-align: middle;
+  list-style-type: none;
+  display: inline-block;
+  margin: 0px;
+  padding: 0px;
+}
+div.adt-container ul.multiset:before {
+  content: "\273B{";
+  margin-right: 1ex;
+}
+div.adt-container ul.multiset:after {
+  content: "}\273B";
+  margin-left: 1ex;
+}
+div.adt-container ul.multiset div.empty {
+  display: inline-block;
+  width: 0px;
+  margin: 0ex -0.5ex 0ex -0.5ex;
+}
+div.adt-container ul.multiset li {
+  display: inline-block;
+  margin: 0px;
+}
+div.adt-container ul.multiset li > div {
+  display: inline-block;
+  margin: 0px;
+}
+div.adt-container ul.multiset li:after {
+  content: ",";
+  margin-right: 0.5ex;
+}
+div.adt-container ul.multiset li:last-child:after {
+  content: none;
+}
+
+/*********************************** GRAPH ***********************************/
+/* We just assume the graph is an image inside a div. */
+div.adt-container div.graph {
+  vertical-align: middle;
+  display: inline-block;
+}

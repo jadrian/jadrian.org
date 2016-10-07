@@ -1,0 +1,47 @@
+/*
+Stylesheet for a feedback key
+By Jadrian Miles
+
+Styles a definition list so that each "term" goes in a circle, followed by the
+definition in a left-flush block.
+
+To use:
+<dl class="key">
+  <dd>E</dd>
+    <dt>You need to be more explicit here.</dt>
+</dl>
+*/
+.keyword {
+  font-weight: bold;
+}
+dl.key {
+  margin-top: 0em;
+}
+dl.key dt {
+  display: inline-block;
+  padding: 0em 0.3em;
+  min-width: 1.4em;  /* 1.4 + 0.3 + 0.3 = 2em, a circle. */
+  height: 2em;
+  border-radius: 50%;
+  border: 1.5px solid black;
+  line-height: 2em;
+  text-align: center;
+  font-style: normal;
+  font-weight: normal;
+}
+dl.key dd {
+  /* -1.7em top margin brings first line of dd in line with its dt. */
+  margin: -1.7em 0em 1em 3.5em;
+}
+dl.key dd:last-child {
+  /* This forces the bottom of the containing block to go outside of the bottom
+  of the last dt's bounding circle, in the case that the last dd is only a
+  single line. */
+  min-height: 2em;
+}
+dl.key dd *:first-child {
+  margin-top: 0px;
+}
+dl.key dd div.example-box {
+  margin: 0.5em 0em;
+}

@@ -1,0 +1,63 @@
+/*
+Stylesheet for a "hanging" definition list.
+By Jadrian Miles
+
+Styles a definition list so that each "term" acts like the number in an ordered
+list.
+
+To use:
+<dl class="hanging-dl">
+  <dd>Frogs</dd>
+    <dt>Tree frogs, poison dart frogs, psychotropic frogs.</dt>
+  <dd>Toads</dd>
+    <dt>Bulltoads, battletoads, hypnotoads.</dt>
+  <dd>Birds</dd>
+    <dt>Anything that is not a frog or a toad.</dt>
+</dl>
+
+Note that this stylesheet hard-codes relative widths for the "terms" and
+"definitions": 10% and 90%, respectively.  If you have long or short terms,
+you'll want to override the width properties in [dl.hanging-dl dt] and
+[dl.hanging-dl dd].
+
+Note that we turn each dt and dd, as well as the dl.hanging-dl itself, into a
+float.  This means that any div containing a dl.hanging-dl won't get its height,
+and other problems may also occur.  Applying the "clearfix hack" to this dl
+doesn't help anything; it needs to be applied to the *containing* block.  See
+http://stackoverflow.com/a/7817313 and http://stackoverflow.com/a/6681806 .
+
+Note that a far easier way to do this, that breaks more gracefully and is still
+fine from a semantic HTML standpoint, is to just put the terms and definitions
+in a table.
+*/
+dl.hanging-dl {
+  float: left;
+  margin: 0px;
+  padding-left: 1em;
+}
+dl.hanging-dl dt {
+  clear: left;
+  float: left;
+  width: 10%;
+  position: relative;
+  top: -1px;
+  left: -1em;
+  text-align: right;
+  margin: 0px;
+  padding: 0px;
+  font-weight: bold;
+  font-style: normal;
+}
+dl.hanging-dl dt:after {
+  content: ":";
+}
+dl.hanging-dl dd {
+  float: left;
+  width: 90%;
+  margin: 0px;
+  margin-bottom: 1em;
+  padding-left: 0px;
+}
+dl.hanging-dl dd:last-child {
+  margin-bottom: 0px;
+}

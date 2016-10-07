@@ -1,0 +1,38 @@
+/*
+Stylesheet for an inline, pipe-separated list.
+By Jadrian Miles
+
+Styles an unordered list as a line of text with each pair of elements separated
+by *what looks like* a pipe character --- it's actually a CSS border.
+
+Usage notes:
+ - Put all your li elements on the same line, with no whitespace between
+   consecutive closes and opens.  Otherwise there will be an extra space before
+   the separator.
+ - This stylesheet makes the UL an inline element, so wrap it in a DIV or
+   something else if you need a box --- or just overload the CSS rule.
+ - The separator color is the default, inherited from context.  It may not be
+   what you want; overload it in this case.
+*/
+
+.pipe-separated-list {
+  display: inline;   /* You may want to overload this. */
+  padding: 0px;
+  list-style: none;
+}
+
+.pipe-separated-list > li {
+  margin: 0px;
+  display: inline-block;
+  padding: 0px .4em;
+  border-left: 1px solid; /* You may want to overload the color. */
+}
+
+.pipe-separated-list > li:first-child {
+  padding-left: 0px;
+  border-left: none;
+}
+
+.pipe-separated-list > li:last-child {
+  padding-right: 0px;
+}

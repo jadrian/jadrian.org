@@ -1,0 +1,40 @@
+/*
+CSS for anonymous feedback form.
+
+By Jadrian Miles.
+*/
+table {
+  border: 1px solid #23363D;
+  width: 85ex;
+  margin: 0px auto;
+}
+th, td {
+  text-align: left;
+  vertical-align: top;
+  padding: 1ex;
+  margin: 0px;
+  border-top: 1px dashed #d5dbdd;
+}
+th {
+  width: 10ex;
+}
+.stretch {
+  width: 73ex;
+  margin: 0ex;
+  padding: 0.5ex 1ex;
+  border: 1px solid #d5dbdd;
+}
+#submit {
+  text-align: right;
+}
+td p {
+  margin: 0.5ex 0ex 0ex 0ex;
+}
+@media screen and (max-width: 750px) {
+  table {
+    width: 56.5ex;
+  }
+  .stretch {
+      width: 39ex;
+  }
+}

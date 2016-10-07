@@ -1,0 +1,47 @@
+/*
+CSS for continuing numbering of ordered lists from previous lists.
+To use:
+  <ol class="start">
+    <li>Foo</li>
+  </ol>
+  <p>INTERRUPTING BEAR HAS INTERRUPTED YOUR LIST.</p>
+  <p>THE NEXT LIST ELEMENT WILL BE <span class="ol_num_now"></span>.</p>
+  <ol class="continue">
+    <li>Bar</li>
+  </ol>
+
+This is designed to match the general styling of ol in sty.css: namely, that
+list elements in an ol start 2em in from the left margin (accomplished in both
+regular ol and the classes defined her with padding-left: 2em).
+
+In addition, you can use the class "paren" to put a close-parenthesis after each
+number, instead of a period.  Note that if you don't want the count-continuation
+stuff but you want parens, you still need <ol class="start paren">.
+*/
+/* BUG: ol_num_now doesn't seem to work anymore... */
+ol.start {
+  counter-reset: ol_continue_number; 
+}
+ol.start, ol.continue {
+  padding-left: 2em;
+}
+ol.start > li, ol.continue > li {
+  list-style: none;
+  position: relative;
+}
+ol.start > li:before, ol.continue > li:before { 
+  display: block;
+  float: left;
+  width: 3em;
+  margin-right: 0.5em;
+  margin-left: -3.5em;
+  text-align: right;
+  content: counter(ol_continue_number) "."; 
+  counter-increment: ol_continue_number;
+}
+ol.start.paren > li:before, ol.continue.paren > li:before { 
+  content: counter(ol_continue_number) ")";
+}
+span.ol_num_now {
+  content: counter(ol_continue_number);
+}

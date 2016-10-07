@@ -1,0 +1,28 @@
+/*
+CSS for hiding elements while keeping their contents searchable by the
+browser: just make 'em tiny and blend into the background.
+
+Note that the "color" property is based on the assumption that your page has a
+white background.  If this is wrong, it needs to be customized in your local
+copy of this stylesheet, overridden in your own stylesheet, or overridden by
+Javascript at run-time.
+
+By Jadrian Miles, February 2014.
+*/
+
+.microscopic, .microscopic * {
+  font-size: 3pt            !important;
+  margin: 0px               !important;
+  padding: 0px              !important;
+  line-height: 3pt          !important;
+  border: none              !important;
+  background-color: inherit !important;
+  color: #ffffff            !important;
+  text-decoration: none     !important;
+  cursor: default           !important;
+}
+@media print {
+  .microscopic {
+    display: none;
+  }
+}
