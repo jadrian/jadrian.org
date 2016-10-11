@@ -1,231 +1,208 @@
-@import url(http://fonts.googleapis.com/css?family=Lora|Philosopher|Marcellus);
-@media screen, projection, tv {
-  #contents {
-    width: 60%;
-    margin: 80px auto;
-    padding: 40px;
-    border: 1px dashed #505050;
-  }
-}
-@media screen and (min-width: 673px) and (max-width: 960px) {
-  #contents {
-    width: 576px;
-    margin: 8.3% auto;
-    padding: 40px;
-    border: 1px dashed #505050;
-  }
-}
-@media screen and (max-width: 672px) {
-  #contents {
-    width: 88%;
-    margin: 0px;
-    padding: 6%;
-    border: none;
-  }
-  #modeswitcher {
-    margin: 0px;
-    width: 100%;
-    text-align: right;
-    font-size: 80%;
-  }
-}
-@media screen and (max-width: 572px) {
-  #contents {
-    width: 94%;
-    padding: 3%;
-  }
-}
-/* See the bottom of the file for @media print settings.  They go at the bottom
- * to override everything else.
- */
+/*
+    CSS for my resumé.
+    By Jadrian Miles
+    http://jadrian.org
+*/
 
-body {
-  margin: 0;
-  color: #000000;
-  font-size: 10pt;
-  font-family: Lora;
-}
-h1, h2, .h3 {
-  font-family: Marcellus;
-  /* Marcellus has no bold weight, which is the default user style for
-  headlines.  Some agents (such as Chrome) will try to fake the bolding,
-  but this process is buggy (particularly with printing) and the normal
-  weight looks better anyhow. */
-  font-weight: normal;
-}
-@media screen and (min-width: 673px) {
-  #modeswitcher {
-    width: 100%;
-    text-align: right;
-    margin-top: -30px;
-    margin-left: 30px;
-    font-size: 80%;
-  }
-}
-#header {
-  margin-top: 4ex;
-}
-h1 {
-  float: left;
-  width: 42%;
-  text-align: center;
-  letter-spacing: 0.1em;
+@import url(http://fonts.googleapis.com/css?family=Lora|Marcellus);
+
+/* Global defaults */
+h1, h2, h3, p, dl, ol, ul, li, hr {
   margin: 0px;
 }
-#contact_left {
-  float: left;
-  width: 29%;
-  margin: 0px;
-}
-#contact_right {
-  float: right;
-  text-align: right;
-  width: 29%;
-  margin: 0px;
-}
-#contact_left p {
-  margin: 0px;
-  padding-left: 1em;
-  text-indent: -1em;
-}
-#contact_right p {
-  margin: 0px;
-}
-@media screen and (max-width: 572px) {
-  h1, #contact_left, #contact_right {
-    display: block;
-    float: none;
-    width: auto;
-    text-align: left;
-    margin: 1ex 0px 2ex 0px;
-  }
-}
-#blocker {
-  clear: both;
-}
-h2 {
-  margin-top: 3.5ex;
-  border-top: 1pt dashed #707070;
-  padding-top: 2ex;
-  background-image: linear-gradient(top, #F3F7FC 0%, #FFFFFF 25%);
-  background-image: -o-linear-gradient(top, #F3F7FC 0%, #FFFFFF 25%);
-  background-image: -moz-linear-gradient(top, #F3F7FC 0%, #FFFFFF 25%);
-  background-image: -webkit-linear-gradient(top, #F3F7FC 0%, #FFFFFF 25%);
-  background-image: -ms-linear-gradient(top, #F3F7FC 0%, #FFFFFF 25%);
-  background-image: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    color-stop(0, #F3F7FC),
-    color-stop(0.25, #FFFFFF)
-  );
-}
-@media screen and (max-width: 572px) {
-  h2 {
-    margin-top: 2ex;
-    padding-top: 1ex;
-  }
-}
-.h3 {
-  font-size: 115%;
-  margin: 1em 0em 1ex 0em;
-}
-@media print {
-  h2 {
-    margin: 0.8ex 0ex 0.4ex 0ex;
-    border-top: 1pt dashed #505050;
-    padding-top: 0.8ex;
-    background-image: none;
-    page-break-after: avoid;
-  }
-  .h3 {
-    margin: 0.9ex 0ex 0.7ex 0ex;
-  }
-}
-dt {
-  margin-top: 2ex;
-  margin-bottom: 0.5ex;
-}
-#education dt {
-  margin-top: 1ex;
-}
-#diss_line, #diss_line dt {
-  margin: 0.5ex 0ex;
-}
-dd {
-  margin-left: 1.5em;
-}
-ul {
-  margin: 0px;
-  padding-left: 1.5em;
-}
-li {
-  margin: 0.5ex 0em;
-}
-#pubs li {
-  margin-bottom: 1.5ex;
-}
-.date {
-  float: right;
-  margin-left: 1em;
-}
-li .date {
-  font-size: 85%;
-  margin-top: 0.15em;
-}
-@media screen and (max-width: 572px) {
-  dd {
-    margin-left: 0.8em;
-  }
-  ul {
-    padding-left: 0.6em;
-  }
-  li {
-    margin: 0.2ex 0em;
-  }
-}
-@media print {
-  dl {
-    margin-top: 0ex;
-  }
-  dt {
-    margin-top: 1ex;
-    margin-bottom: 0.3ex;
-  }
-  #education dt {
-    margin-top: 0.6ex;
-  }
-  #diss_line, #diss_line dt {
-    margin: 0.3ex 0ex;
-  }
-  li {
-    margin: 0.3ex 0em;
-  }
-  #pubs li {
-    font-size: 80%;
-    margin-bottom: 1.3ex;
-  }
+address, cite {
+  font-style: normal;
 }
 a:link, a:visited, a:active {
   color: inherit;
-  border-bottom: 1px solid #E0E4F0;
+  border-bottom: 1px solid hsla(208, 10%, 65%, 0.3);
   text-decoration: none;
 }
 a:hover {
   background-color: #FFFF00;
   text-decoration: none;
-}
-@media print {
-  a:link, a:visited, a:active {
-    text-decoration: none;
-    border-width: 0px;
-    color: inherit;
-    background-color: none;
-  }
+  border-bottom: 1px solid #FFFF00;
 }
 
-.print_show {
+/* Colors & font styling */
+html {
+  background-color: hsl(208, 100%, 99.5%);
+  font-family: Lora;
+  color: hsl(208, 80%, 6%);
+}
+h2 {
+  border-top-color: hsl(208, 10%, 65%);
+}
+h1, h2, h3, .jobtitle, .institution {
+  font-family: Marcellus;
+  font-weight: normal;
+}
+h1 {
+  font-size: 1.953125rem;
+}
+h2 {
+  font-size: 1.5625rem;
+}
+h3 {
+  font-size: 1.25rem;
+}
+#pitch {
+  line-height: 130%;
+}
+section {
+  text-align: justify;
+}
+.jobtitle {
+  font-size: 1.25rem;
+  font-weight: normal;
+  text-align: left;
+}
+.date {
+  font-size: 0.8rem;
+  color: hsl(208, 10%, 65%);
+}
+.institution .dept {
+  font-size: 0.8rem;
+  color: hsl(208, 10%, 65%);
+}
+.location {
+  color: hsl(208, 10%, 65%);
+  font-size: 0.8rem;
+}
+#education .jobtitle {
+  font-size: 1.25rem;
+}
+#skills b, #education b {
+  font-family: Marcellus;
+  font-weight: normal;
+}
+#pubs ul {
+  font-size: 89%;
+  color: hsl(208, 10%, 35%);
+}
+#pubs ul .title {
+  color: hsl(208, 80%, 6%);
+}
+
+/* Header */
+#contact_left {
+  display: inline-block;
+  width: 28%;
+  float: left;
+}
+#contact_right {
+  display: inline-block;
+  width: 28%;
+  float: right;
+  text-align: right;
+}
+h1 {
+  display: inline-block;
+  width: 40%;
+  margin: -0.5rem 2% 0rem 2%;
+  text-align: center;
+}
+#contact_left p, #contact_right p {
+  margin: 0px;
+}
+
+/* Pitch section */
+section#pitch {
+  margin: 0rem 2.8rem;
+}
+
+/* Vertical spacing */
+main > section {
+  margin-top: 2rem;
+}
+main > section:first-child {
+  /* Clear both so that the box for this section buts against the
+  bottom of the floating contact blocks, rather than the h1, which is
+  a little bit higher. */
+  clear: both;
+  /* Then fake a 2rem margin using padding instead. */
+  margin-top: 0rem;
+  padding-top: 2rem;
+}
+section > ul > li, h3 {
+  margin-top: 1rem;
+}
+#skills li, #pubs li {
+  margin-top: 0rem;
+}
+section li li, #skills li, #pubs li, section#pitch > p {
+  padding-top: 1ex;
+}
+section#pitch > p:first-of-type {
+  padding-top: 0ex;
+}
+
+/* Dividers (made by <hr/>s in text mode) */
+h2 {
+  border-top-width: 1px;
+  border-top-style: dashed;
+  padding-top: 1.5rem;
+}
+
+/* Block arrangement for job sections */
+.date {
+  display: block;
+  float: left;
+  vertical-align: top;
+  text-align: center;
+  width: 1.85rem;
+  margin-top: 0.8ex;
+  margin-right: -1.85rem;
+}
+.jobtitle {
+  display: inline-block;
+  margin-left: 2.65rem;
+}
+.institution {
+  display: inline-block;
+  float: right;
+  vertical-align: top;
+  text-align: right;
+  margin-top: 0.75ex;
+  line-height: 100%;
+  margin-left: 2ex;
+}
+span.dept:before {
+  content: '\A';
+  display: block;
+}
+.location {
+  display: inline-block;
   display: none;
+  float: right;
+  margin-top: 0.5rem;
+}
+ul.joblist {
+  padding: 0px;
+  list-style-type: none;
+}
+ul.joblist > li > ul {
+  margin-left: 2.65rem;
+}
+ul {
+  padding-left: 2rem;
+}
+
+/* Block tweaks for education section */
+#education .jobtitle {
+  max-width: 70%;
+}
+#education .institution {
+  vertical-align: top;
+  margin-top: 0.375rem;
+}
+
+/* Global overrides */
+.hide {
+  display: none;
+}
+.nowrap {
+  white-space: nowrap;
 }
 .txt_only {
   display: none;
@@ -234,50 +211,161 @@ a:hover {
   display: none;
 }
 
-@media print {
-  #contents {
-    /* As of 2016, we're printing the resumé with Chrome.  To get proper page
-     * margins in the printed output, set them to 0.75" on left, right, and
-     * bottom, and 0.4" on top.  The CSS mostly stays out of the way.
-     */
+/* Responsive geometry & sizing */
+
+/* 1. Default layout: stretch-to-fill, desktop-sized. */
+html {
+  font-size: 10pt; /* This defines the "rem" unit used everywhere else. */ 
+}
+body {
+  max-width: 55rem;
+  margin: 4rem auto 6.15rem auto;
+  padding: 0rem 3rem;
+}
+
+/* 2. Skinny windows. */
+@media screen and (max-width: 650px) {
+  html {
+    font-size: 9pt; /* Scale everything down to 90%. */
+  }
+  body {
+    margin: 0rem;
+    padding: 0.75rem 0.5rem 2rem 0.5rem;
+  }
+}
+
+/* 3. Very skinny windows; phones. */
+@media screen and (max-width: 500px) {
+  body {
+    margin: 0rem;
+    padding: 0.75rem 0.5rem 1rem 0.5rem;
+  }
+  /* Abusing "display: table" to change vertical order in the header.
+     See http://tanalin.com/en/articles/css-block-order */
+  header {
+    display: table;
     width: 100%;
-    margin: 0in;
-    
-    /* In the past, we used Safari to print the resumé, because it had better
-     * font rendering (particularly for bold text).  But its handling of margins
-     * was a disaster; it put 0.25" on top, left, right and 0.5" on bottom, on
-     * each piece of paper., regardless of what settings you tweaked.  This led
-     * to the following considerations:
-     *   The first-page top positioning of the main #header div is correct by
-     * virtue of four lengths adding together: 0.25" from Safari, 0.25" from
-     * #contents's margin, 0.2" from #header's padding, and 0.05" of headroom
-     * from the font.
-     *   The second-page header is handled by hand-tuned hacky values directly
-     * in the HTML.
-     */
-    /*margin: 0.25in 0.5in 0.25in 0.5in;*/
-    
-    padding: 0in;
-    font-size: 80%;
-    border: none;
   }
-  #header {
-    margin-top: 0in;
-    
-    /* Formerly 0.2in for Safari. */
-    padding-top: 0.3in;
+  h1 {
+    display: table-footer-group;
+    width: 100%;
   }
-  #modeswitcher {
+  #contact_left, #contact_right {
+    width: auto;
+    margin-bottom: 1.5rem;
+    font-size: 0.8rem;
+    color: hsl(208, 10%, 65%);
+  }
+}
+
+/* 4. Ridiculously skinny windows. */
+@media screen and (max-width: 440px) {
+  #education .jobtitle {
+    max-width: 57%;
+  }
+  #distinction {
     display: none;
   }
-  .print_hide {
+}
+
+/* 5. Wide desktop windows. */
+@media screen and (min-width: 820px) {
+  body {
+    margin: 6.5vw auto 10vw auto;
+  }
+}
+
+/* Special overrides related to printing */
+@media screen {
+  .print_only {
     display: none;
+  }
+}
+@media print {
+  .screen_only {
+    display: none;
+  }
+}
+
+/* Page geometry for WeasyPrint */
+/* Note that the desired margins are 0.75 on all sides, except for any headers
+   on pages beyond the first one, which should be 0.4 from the top. */
+@page {
+  size: Letter;
+  margin: 0.4in 0.75in 0.75in 0.75in;
+}
+@media print {
+  /* Page geometry */
+  body {
+    max-width: none;
+    width: 100%;
+    margin: 0.35in 0in 0in 0in;
+    padding: 0rem;
   }
   
-  /* The "skills" section starts right at the top of Page 2. */
-  #skills h2 {
-    border-top: none;
+  /* Sizing */
+  html {
+    font-size: 8pt;
+  }
+  
+  /* Spacing */
+  main > section {
+    margin-top: 1rem;
+  }
+  main > section:first-child {
+    margin-top: 0rem;
+    padding-top: 1rem;
+  }
+  h2 {
+    padding-top: 0.75rem;
+  }
+  section > ul > li, h3 {
+    margin-top: 0.75rem;
+  }
+  #skills li, #pubs li {
+    margin-top: 0rem;
+  }
+  section li li, #skills li, #pubs li, section#pitch > p {
+    padding-top: 0.75ex;
+  }
+  section#pitch > p:first-of-type {
+    padding-top: 0ex;
+  }
+  
+  /* Page 2 */
+  #mentor {
     margin-top: 0in;
-    padding-top: 0in;
+  }
+  #mentor > h2 {
+    border-top: none;
+    padding-top: 0.55in; /* Hand-tuned for page 2 margin in WeasyPrint. */
+  }
+  
+  /* Colors */
+  hmtl {
+    background-color: #FFFFFF;
+  }
+  body {
+    color: hsl(0, 0%, 10%);
+  }
+  a:link, a:visited, a:active {
+    border-bottom: none;
+  }
+  a:hover {
+    background: none;
+    text-decoration: none;
+    border-bottom: none;
+  }
+  h2 {
+    border-top: 1px dashed hsl(0, 0%, 65%);
+  }
+  .date, .institution .dept, .location {
+    color: hsl(0, 0%, 65%);
+  }
+  #pubs ul {
+    color: hsl(0, 0%, 50%);
+  }
+  #pubs ul .title {
+    color: hsl(0, 0%, 10%);
   }
 }
