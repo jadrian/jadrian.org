@@ -83,7 +83,9 @@ a#photo-link, a#photo-link:visited, a#photo-link:hover {
   background-size: cover;
   background-position: center top;
 }
-#footer {
+footer {
+  /* The footer is empty, but its existence forces the body box to grow to
+     fit the entire photo, so that the bottom margin is correct. */
   clear: both;
 }
 
