@@ -83,6 +83,11 @@ section {
 #pubs ul .title {
   color: hsl(208, 80%, 6%);
 }
+#skills li {
+  /* Edges are ragged in this list anyway; this prevents inconsistent
+  spacing in one-off entries that happen to wrap. */
+  text-align: left;
+}
 
 /* Header */
 #contact_left {
@@ -165,7 +170,7 @@ h2 {
   text-align: right;
   margin-top: 0.75ex;
   line-height: 100%;
-  margin-left: 2ex;
+  margin-left: 1rem;
 }
 span.dept:before {
   content: '\A';
@@ -186,6 +191,14 @@ ul.joblist > li > ul {
 }
 ul {
   padding-left: 2rem;
+}
+
+/* Block tweaks for particular jobs */
+#bioeng {
+  width: 21ex;
+}
+#vrl {
+  width: 23.5ex;
 }
 
 /* Block tweaks for education section */
@@ -213,7 +226,7 @@ ul {
 
 /* Responsive geometry & sizing */
 
-/* 1. Default layout: stretch-to-fill, desktop-sized. */
+/* 1. Default layout: stretch-to-fill, desktop-sized */
 html {
   font-size: 10pt; /* This defines the "rem" unit used everywhere else. */ 
 }
@@ -226,7 +239,7 @@ body {
 /* 2. Skinny windows. */
 @media screen and (max-width: 650px) {
   html {
-    font-size: 9pt; /* Scale everything down to 90%. */
+    font-size: 9pt; /* Scale everything down to 90% */
   }
   body {
     margin: 0rem;
@@ -234,7 +247,7 @@ body {
   }
 }
 
-/* 3. Very skinny windows; phones. */
+/* 3. Very skinny windows; big phones */
 @media screen and (max-width: 500px) {
   body {
     margin: 0rem;
@@ -256,14 +269,45 @@ body {
     font-size: 0.8rem;
     color: hsl(208, 10%, 65%);
   }
+  .date {
+    float: right;
+    position: relative;
+    top: -2.45rem;
+    width: auto;
+    margin: 0rem 0rem -1rem 0rem;
+  }
+  .date .txt_only {
+    display: inline;
+  }
+  .jobtitle {
+    margin-left: 0rem;
+  }
+  .institution {
+    display: block;
+    float: none;
+    text-align: left;
+  }
+  span.dept:before {
+    content: ' ';
+    display: inline;
+  }
+  ul.joblist > li > ul {
+    margin-left: 1rem;
+  }
+  #bioeng, #vrl {
+    width: auto;
+  }
+  #education .jobtitle {
+    max-width: none;
+  }
+  #education .accomplishments {
+    text-align: left;
+  }
 }
 
-/* 4. Ridiculously skinny windows. */
-@media screen and (max-width: 440px) {
-  #education .jobtitle {
-    max-width: 57%;
-  }
-  #distinction {
+/* 4. Ridiculously skinny windows; little phones */
+@media screen and (max-width: 460px) {
+  #education #distinction {
     display: none;
   }
 }
