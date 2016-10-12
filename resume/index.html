@@ -7,12 +7,6 @@
   <title>Resumé — Jadrian Miles</title>
   <link rel="stylesheet" href="resume.css">
 </head>
-<!--
-  TODO
-   - Change the "pitch" section to a div?
-   - Reformat for phones
-   - On phones, reverse begin & end of date ranges
--->
 <!--                             == PRINTING ==
 For stability of output, I'm now using WeasyPrint to make the PDF version of
 this document.  (In the past, I used Chrome and occasionally Safari, but their
@@ -43,7 +37,7 @@ WeasyPrint inside it.  Then, to print to PDF:
     <h2 class="txt_only">Introduction</h2>
     <p>With a deep background in computer science, mathematical modeling, and humane communication, I make immediate and lasting contributions to teams developing software for diverse purposes.  My experience as an interdisciplinary scientist, a teacher, and a self-taught programmer makes me sensitive to the ways that other people — whether collaborators or customers — think and communicate, and leads me to document my work carefully.  I love style guides, code reviews, literature searches, and long hikes in the woods.  I thrill to tricky technical problems that require insight and teamwork to solve.  I am committed to using my skills and privileges to make the world a more just, sustainable, and creative place, and I seek out opportunities to work with people that share that commitment.</p>
   </section>
-    
+  
   <section id="sw-eng">
     <hr class="txt_only" />
     <h2>Software Engineering &amp; Research</h2>
@@ -53,7 +47,7 @@ WeasyPrint inside it.  Then, to print to PDF:
         <span class="institution" id="bioeng"><a href="http://www.rhodeislandhospital.org">Rhode Island Hospital</a><span class="txt_only"> </span><span class="dept">(<a href="https://www.brown.edu/academics/medical/about/departments/orthopaedics/bioengineering/home">Bioengineering&nbsp;Lab</a>, <a href="http://biomed.brown.edu/Medicine_Departments/ORTHOPAEDICS">Orthopaedics&nbsp;Dept</a>)</span>
         </span><span class="txt_only"> — </span>
         <span class="location">Providence, RI</span><span class="txt_only">, </span>
-        <span class="date">2016,<wbr><span class="txt_only"> </span>2013&nbsp;</span>
+        <span class="date pair"><span class="first">2013</span><span class="sep">,<span class="txt_only"> </span></span><span class="second">2016</span></span>
         <ul class="accomplishments">
           <li>Diagnosed and resolved bugs in custom software triggered by topological artifacts in triangle meshes derived from MRI data.  This enabled my client researchers to use a new and more sensitive technique for measuring cartilage thickness in pre-clinical trials for several years after my work.</li>
           <li>Built an extensible GUI application to allow non-programmers to use a custom software pipeline for MRI data processing.</li>
@@ -71,7 +65,7 @@ WeasyPrint inside it.  Then, to print to PDF:
         <span class="institution" id="vrl"><a href="http://www.brown.edu">Brown University</a><span class="txt_only"> </span><span class="dept">(<a href="http://vis.cs.brown.edu">Visualization&nbsp;Research&nbsp;Lab</a>, <a href="http://www.cs.brown.edu">Computer&nbsp;Science&nbsp;Dept</a>)</span>
         </span><span class="txt_only"> — </span>
         <span class="location">Providence, RI</span><span class="txt_only">, </span>
-        <span class="date">2015<wbr>–<wbr>2006</span>
+        <span class="date range"><span class="begin">2006</span><span class="sep"><wbr>–<wbr></span><span class="end">2015</span></span>
         <ul class="accomplishments">
           <li>Designed a technique for model optimization in infinite-dimensional configuration spaces with both discrete and continuous parameters, supporting metaheuristics like simulated annealing.</li>
           <li>Created a mathematical model of brain structure and a GPU-accelerated algorithm to render synthetic MRI images from it.</li>
@@ -95,7 +89,7 @@ WeasyPrint inside it.  Then, to print to PDF:
         <b class="jobtitle">Engineering Technician</b><span class="txt_only"> at </span>
         <span class="institution"><a href="http://www.avid.com">Avid Technology</a></span><span class="txt_only"> — </span>
         <span class="location">Tewksbury, MA</span><span class="txt_only">, </span>
-        <span class="date">2008<wbr>–<wbr>2002</span>
+        <span class="date range"><span class="begin">2002</span><span class="sep"><wbr>–<wbr></span><span class="end">2008</span></span>
         <ul class="accomplishments">
           <li>Research and development of algorithms for video deinterlacing (machine learning), scene reconstruction (computer vision), and cryptographic steganography.</li>
           <li>Earlier projects included video codec evaluation; development of in-house codec testing workflow software; migration of the full corporate codebase to the Visual Studio .net compiler; software refactoring and optimization; software quality assurance; and network and hardware construction and maintenance.</li>
@@ -123,7 +117,7 @@ WeasyPrint inside it.  Then, to print to PDF:
         <span class="institution"><a href="http://www.andover.edu">Phillips Academy</a><span class="txt_only"> </span><span class="dept">(Math/Stats/CS&nbsp;Dept)</span>
         </span><span class="txt_only"> — </span>
         <span class="location">Andover, MA</span><span class="txt_only">, </span>
-        <span class="date">2016<wbr>–<wbr>2015</span>
+        <span class="date range"><span class="begin">2015</span><span class="sep"><wbr>–<wbr></span><span class="end">2016</span></span>
         <ul>
           <li>Taught
             <i class="course">AP CS</i>,
@@ -150,7 +144,7 @@ WeasyPrint inside it.  Then, to print to PDF:
         <span class="institution"><a href="http://www.carleton.edu">Carleton College</a><span class="txt_only"> </span><span class="dept">(<a href="http://www.cs.carleton.edu">Computer&nbsp;Science&nbsp;Dept</a>)</span>
         </span><span class="txt_only"> — </span>
         <span class="location">Northfield, MN</span><span class="txt_only">, </span>
-        <span class="date">2015<wbr>–<wbr>2013</span>
+        <span class="date range"><span class="begin">2013</span><span class="sep"><wbr>–<wbr></span><span class="end">2015</span></span>
         <ul class="accomplishments">
           <li>Taught
             <i class="course"><a href="http://jadrian.org/courses/carleton/cs111/2015.0/index.html">Intro</a></i>,
@@ -199,7 +193,7 @@ WeasyPrint inside it.  Then, to print to PDF:
         <span class="institution"><a href="http://www.duke.edu">Duke University</a><span class="txt_only"> </span><span class="dept">(<a href="http://www.cs.duke.edu">Computer&nbsp;Science&nbsp;Dept</a>)</span>
         </span><span class="txt_only"> — </span>
         <span class="location">Durham, NC</span><span class="txt_only">, </span>
-        <span class="date">2006<wbr>–<wbr>2004</span>
+        <span class="date range"><span class="begin">2004</span><span class="sep"><wbr>–<wbr></span><span class="end">2006</span></span>
         <ul class="accomplishments">
           <li>TA'd
             <i class="course"><a href="http://www.cs.duke.edu/courses/fall04/cps108">Software Design</a></i>,
@@ -280,7 +274,7 @@ WeasyPrint inside it.  Then, to print to PDF:
         <b class="jobtitle">Academic Mentor</b><span class="txt_only"> at </span>
         <span class="institution"><a href="http://newurbanarts.org">New Urban Arts</a></span><span class="txt_only"> — </span>
         <span class="location">Providence, RI</span><span class="txt_only">, </span>
-        <span class="date">2011<wbr>–<wbr>2009</span>
+        <span class="date range"><span class="begin">2009</span><span class="sep"><wbr>–<wbr></span><span class="end">2011</span></span>
         <ul class="accomplishments">
           <li>Mentored approximately a dozen high-school students in math and science at an open-door urban community art studio.</li>
         </ul>
@@ -319,7 +313,7 @@ WeasyPrint inside it.  Then, to print to PDF:
       <li>
         <span class="institution">Carleton College</span><span class="txt_only"> — </span>
         <span class="location">Northfield, MN</span><span class="txt_only">, </span>
-        <span class="date">2013<wbr>–<wbr>2015</span>
+        <span class="date range"><span class="begin">2015</span><span class="sep"><wbr>–<wbr></span><span class="end">2013</span></span>
         <ul class="accomplishments">
           <li>
             Faculty reviewer of sophomore writing portfolios.
@@ -350,7 +344,7 @@ WeasyPrint inside it.  Then, to print to PDF:
       <li>
         <span class="institution">Brown University</span><span class="txt_only"> — </span>
         <span class="location">Providence, RI</span><span class="txt_only">, </span>
-        <span class="date">2006<wbr>–<wbr>2010</span>
+        <span class="date range"><span class="begin">2010</span><span class="sep"><wbr>–<wbr></span><span class="end">2006</span></span>
         <ul class="accomplishments">
           <li>
             Reviewer for <cite><a href="http://visweek.org/"><i class="journal">IEEE Visualization</i></a></cite> and <cite><a href="http://www.computer.org/tvcg"><i class="journal">IEEE Transactions on Visualization and Computer Graphics</i></a></cite>.
@@ -381,7 +375,7 @@ WeasyPrint inside it.  Then, to print to PDF:
       <li>
         <span class="institution">Duke University</span><span class="txt_only"> — </span>
         <span class="location">Durham, NC</span><span class="txt_only">, </span>
-        <span class="date">2005<wbr>–<wbr>2006</span>
+        <span class="date range"><span class="begin">2006</span><span class="sep"><wbr>–<wbr></span><span class="end">2005</span></span>
         <ul class="accomplishments">
           <li>
             President, Duke University Chapter of the Association for Computing Machinery.

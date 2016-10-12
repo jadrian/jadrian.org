@@ -85,7 +85,7 @@ section {
 }
 #skills li {
   /* Edges are ragged in this list anyway; this prevents inconsistent
-  spacing in one-off entries that happen to wrap. */
+     spacing in one-off entries that happen to wrap. */
   text-align: left;
 }
 
@@ -122,8 +122,8 @@ main > section {
 }
 main > section:first-child {
   /* Clear both so that the box for this section buts against the
-  bottom of the floating contact blocks, rather than the h1, which is
-  a little bit higher. */
+     bottom of the floating contact blocks, rather than the h1, which is
+     a little bit higher. */
   clear: both;
   /* Then fake a 2rem margin using padding instead. */
   margin-top: 0rem;
@@ -224,7 +224,7 @@ ul {
   display: none;
 }
 
-/* Responsive geometry & sizing */
+/* Responsive layout and sizing */
 
 /* 1. Default layout: stretch-to-fill, desktop-sized */
 html {
@@ -234,6 +234,48 @@ body {
   max-width: 55rem;
   margin: 4rem auto 6.15rem auto;
   padding: 0rem 3rem;
+}
+
+/* Reverse the order of date ranges since they're stacked vertically. */
+.date.range .begin, .date.range .sep, .date.range .end {
+  display: block;
+  width: 1.85rem;
+}
+.date.range .begin {
+  position: relative;
+  top: 1.65rem;
+}
+.date.range .sep {
+  position: relative;
+  top: -0.15rem;
+}
+.date.range .end {
+  position: relative;
+  top: -1.95rem;
+}
+
+/* Ditto for date pairs. */
+.date.pair {
+  width: 1.85rem;
+}
+.date.pair .first {
+  display: block;
+  position: relative;
+  top: 0.95rem;
+}
+.date.pair .first:after {
+  content: ' ';  /* This is a UTF no-break space. */
+}
+.date.pair .second  {
+  display: block;
+  position: relative;
+  top: -0.95rem;
+}
+.date.pair .second:after {
+  content: ',';
+}
+.date.pair .sep {
+  display: none;
 }
 
 /* 2. Skinny windows. */
@@ -251,33 +293,41 @@ body {
 @media screen and (max-width: 500px) {
   body {
     margin: 0rem;
-    padding: 0.75rem 0.5rem 1rem 0.5rem;
+    padding: 0.5rem 0.5rem 1rem 0.5rem;
   }
-  /* Abusing "display: table" to change vertical order in the header.
-     See http://tanalin.com/en/articles/css-block-order */
   header {
-    display: table;
+    display: block;
     width: 100%;
   }
   h1 {
-    display: table-footer-group;
+    display: block;
     width: 100%;
+    margin: 0rem 0rem -2.5rem 0rem;
+    position: relative;
+    top: 3.5rem;
   }
   #contact_left, #contact_right {
     width: auto;
-    margin-bottom: 1.5rem;
+    margin-bottom: 4rem;
     font-size: 0.8rem;
     color: hsl(208, 10%, 65%);
   }
   .date {
+    display: block;
     float: right;
     position: relative;
     top: -2.45rem;
-    width: auto;
+    width: auto !important;
     margin: 0rem 0rem -1rem 0rem;
   }
-  .date .txt_only {
-    display: inline;
+  .date * {
+    display: inline !important;
+    position: initial !important;
+    top: 0rem !important;
+  }
+  .date.pair *:after {
+    content: '';
+    display: none;
   }
   .jobtitle {
     margin-left: 0rem;
