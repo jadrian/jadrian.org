@@ -261,7 +261,7 @@ body {
 .date.pair .first {
   display: block;
   position: relative;
-  top: 0.95rem;
+  top: 1rem;
 }
 .date.pair .first:after {
   content: ' ';  /* This is a UTF no-break space. */
@@ -269,7 +269,7 @@ body {
 .date.pair .second  {
   display: block;
   position: relative;
-  top: -0.95rem;
+  top: -1rem;
 }
 .date.pair .second:after {
   content: ',';
