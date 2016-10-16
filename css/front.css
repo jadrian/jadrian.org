@@ -69,6 +69,9 @@ a#photo-link, a#photo-link:visited, a#photo-link:hover {
   background-color: transparent;
   outline: none;
 }
+a#email {
+  font-family: monospace;
+}
 
 #photo-wrapper {
   width: 48%;
