@@ -10,18 +10,11 @@
 h1, h2, h3, p, dl, ol, ul, li, hr {
   margin: 0px;
 }
+small {
+  font-size: inherit;
+}
 address, cite {
   font-style: normal;
-}
-a:link, a:visited, a:active {
-  color: inherit;
-  border-bottom: 1px solid hsla(208, 10%, 65%, 0.3);
-  text-decoration: none;
-}
-a:hover {
-  background-color: #FFFF00;
-  text-decoration: none;
-  border-bottom: 1px solid #FFFF00;
 }
 
 /* Colors & font styling */
@@ -45,6 +38,9 @@ h2 {
 }
 h3 {
   font-size: 1.25rem;
+}
+#controls {
+  font-size: 0.8rem;
 }
 #pitch {
   line-height: 130%;
@@ -87,6 +83,23 @@ section {
   /* Edges are ragged in this list anyway; this prevents inconsistent
      spacing in one-off entries that happen to wrap. */
   text-align: left;
+}
+a:link, a:visited, a:active {
+  color: inherit;
+  border-bottom: 1px solid hsla(208, 10%, 65%, 0.3);
+  text-decoration: none;
+}
+a:hover {
+  background-color: #FFFF00;
+  text-decoration: none;
+  border-bottom: 1px solid #FFFF00;
+}
+
+/* Controls (Download link) */
+#controls {
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
 }
 
 /* Header */
@@ -285,7 +298,18 @@ body {
   }
   body {
     margin: 0rem;
-    padding: 0.75rem 0.5rem 2rem 0.5rem;
+    padding: 0.75rem 0.5rem 3rem 0.5rem;
+  }
+  #controls {
+    position: fixed;
+    top: auto;
+    bottom: 0rem;
+    right: 0rem;
+    padding: 0.4rem 0.8rem 0.8rem 0.5rem;
+    border: 1px dashed hsl(208, 10%, 65%);
+    border-right: none;
+    border-bottom: none;
+    background-color: hsl(208, 100%, 99.5%);
   }
 }
 

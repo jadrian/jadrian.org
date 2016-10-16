@@ -20,15 +20,19 @@ WeasyPrint inside it.  Then, to print to PDF:
 -->
 <body>
 
+<aside id="controls" class="screen_only">
+  <small>[ <a href="Jadrian Miles - Resume.pdf">Download PDF</a> ]</small>
+</aside>
+
 <header>
   <h1>Jadrian Miles, PhD</h1>
   <div id="contact_left">
-    <p><a href="http://jadrian.org">http://jadrian.org</a></p>
-    <p>Philadelphia, PA 19143</p>
+    <a href="http://jadrian.org">http://jadrian.org</a><br/>
+    Philadelphia, PA 19143</p>
   </div>
   <address id="contact_right">
-    <p><a href="mailto:jadrian@jadrian.org">jadrian@jadrian.org</a></p>
-    <p>(919) 593-8094</p>
+    <a href="mailto:jadrian@jadrian.org">jadrian@jadrian.org</a><br/>
+    (919) 593-8094</p>
   </address>
 </header>
 
@@ -256,9 +260,9 @@ WeasyPrint inside it.  Then, to print to PDF:
   </section>
   
   <aside id="res_pg2" class="pghead res_only">
-    <span class="hdr_left">&nbsp;</span>
-    <span class="hdr_cntr">Résumé — Jadrian Miles</span>
-    <span class="hdr_rght">Page 2</span>
+    <small class="hdr_left">&nbsp;</small>
+    <small class="hdr_cntr">Résumé — Jadrian Miles</small>
+    <small class="hdr_rght">Page 2</small>
   </aside>
   
   <section id="mentor">
