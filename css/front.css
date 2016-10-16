@@ -66,8 +66,7 @@ a:hover {
   cursor: pointer;
 }
 a#photo-link, a#photo-link:visited, a#photo-link:hover {
-  background-color: none;
-  color: none;
+  background-color: transparent;
   outline: none;
 }
 
