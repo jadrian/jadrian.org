@@ -155,9 +155,9 @@ h2 {
   float: left;
   vertical-align: top;
   text-align: center;
-  width: 1.85rem;
+  width: 1.9rem;
   margin-top: 0.8ex;
-  margin-right: -1.85rem;
+  margin-right: -1.9rem;
 }
 .jobtitle {
   display: inline-block;
@@ -239,7 +239,7 @@ body {
 /* Reverse the order of date ranges since they're stacked vertically. */
 .date.range .begin, .date.range .sep, .date.range .end {
   display: block;
-  width: 1.85rem;
+  width: 1.9rem;
 }
 .date.range .begin {
   position: relative;
@@ -256,7 +256,7 @@ body {
 
 /* Ditto for date pairs. */
 .date.pair {
-  width: 1.85rem;
+  width: 1.9rem;
 }
 .date.pair .first {
   display: block;
@@ -422,17 +422,46 @@ body {
   section li li, #skills li, #pubs li, section#pitch > p {
     padding-top: 0.75ex;
   }
-  section#pitch > p:first-of-type {
+  #pitch > p:first-of-type {
     padding-top: 0ex;
   }
   
+  /* Page headers */
+  .pghead {
+    width: 100%;
+    font-size: 0.8rem;
+    color: hsl(208, 10%, 65%);
+    margin-top: 3in;
+    /* 3" is overkill to bump the header over the page break.
+       WeasyPrint collapses margins at the top of a new page, so the header
+       butts right up against the 0.4" page margin. */
+  }
+  .hdr_left {
+    float: left;
+    width: 25%;
+    text-align: left;
+  }
+  .hdr_cntr {
+    float: left;
+    width: 50%;
+    text-align: center;
+  }
+  .hdr_rght {
+    float: right;
+    width: 25%;
+    text-align: right;
+  }
+  
   /* Page 2 */
+  /* All these values are hand-tuned to have page 1 end after the Education
+     section, then give a header line 0.4" from the top of the page and the
+     Mentor section 0.75" from the top. */
   #mentor {
     margin-top: 0in;
   }
   #mentor > h2 {
     border-top: none;
-    padding-top: 0.55in; /* Hand-tuned for page 2 margin in WeasyPrint. */
+    padding-top: 0.3125in;
   }
   
   /* Colors */
